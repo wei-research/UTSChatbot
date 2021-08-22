@@ -90,3 +90,10 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: inform
+  examples: |
+    - What is [09019](code)
+    - What is [32567](code)
+    - What is [32345](code)
+    - What is [43234](code)

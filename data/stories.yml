@@ -28,3 +28,10 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: inform
+  steps:
+  - intent: inform
+  - slot_was_set:
+    - code: "Science"
+  - action: query_course_name

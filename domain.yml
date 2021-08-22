@@ -19,8 +19,16 @@ intents:
     use_entities: true
 - bot_challenge:
     use_entities: true
-entities: []
-slots: {}
+- inform
+entities: 
+- code
+- name
+- type
+slots: 
+  code:
+    type: text
+  name:
+    type: text
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -35,6 +43,7 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-actions: []
+actions:
+  - query_course_name
 forms: {}
 e2e_actions: []
