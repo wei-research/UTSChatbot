@@ -1,29 +1,625 @@
 version: "2.0"
-
 stories:
-
-- story: happy path
+- story: story_greet
   steps:
   - intent: greet
   - action: utter_greet
 
-- story: sad path 1
+- story: story_goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: story_what_can_you_do_02
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: affirm
-  - action: utter_happy
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
 
-- story: sad path 2
+- story: story_details
+  steps:
+  - intent: details
+    entities:
+    - code: c12390
+  - slot_was_set:
+    - code: c12390
+  - action: action_details
+  - slot_was_set:
+    - code: '12390'
+
+- story: story_details_01
+  steps:
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: details
+    entities:
+    - code: c12390
+  - slot_was_set:
+    - code: c12390
+  - action: action_details
+  - slot_was_set:
+    - code: '12390'
+  - intent: details
+    entities:
+    - code: c23941
+  - slot_was_set:
+    - code: c23941
+  - action: action_details
+  - slot_was_set:
+    - code: '23941'
+
+- story: story_details_02
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: details
+    entities:
+    - name: bachelor of science in it
+  - action: action_details
+  - slot_was_set:
+    - code: '10148'
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
 
-- story: inform course name
+- story: story_details_03
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: details
+    entities:
+    - code: c12932
+  - slot_was_set:
+    - code: c12932
+  - action: action_details
+  - slot_was_set:
+    - code: '12932'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_details_04
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - code: '31251'
+  - slot_was_set:
+    - code: '31251'
+  - action: action_details
+  - slot_was_set:
+    - code: '31251'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_children_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - code: '41004'
+  - slot_was_set:
+    - code: '41004'
+  - action: action_details
+  - slot_was_set:
+    - code: '41004'
+  - intent: children
+  - action: action_children
+  - slot_was_set:
+    - code: '41004'
+  - intent: children
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_children
+  - slot_was_set:
+    - code: '10219'
+
+- story: story_children_01
+  steps:
+  - intent: details
+    entities:
+    - code: c12390
+  - slot_was_set:
+    - code: c12390
+  - action: action_details
+  - slot_was_set:
+    - code: '12390'
+  - intent: children
+  - action: action_children
+  - slot_was_set:
+    - code: '12390'
+
+- story: story_children_02
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - name: bachelor in business bachelor of science in it
+  - action: action_details
+  - slot_was_set:
+    - code: '10219'
+  - intent: children
+  - action: action_children
+  - slot_was_set:
+    - code: '10219'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_children_03
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: children
+    entities:
+    - name: bachelor of science it
+  - slot_was_set:
+    - code: '10148'
+  - action: action_children
+  - slot_was_set:
+    - code: '10148'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_children_04
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: children
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_children
+  - slot_was_set:
+    - code: '10219'
+  - intent: details
+    entities:
+    - code: '31241'
+  - slot_was_set:
+    - code: '31241'
+  - action: action_details
+  - slot_was_set:
+    - code: '31241'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_hons
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: honours
+    entities:
+    - code: c10148
+  - slot_was_set:
+    - code: c10148
+  - action: action_hons
+  - slot_was_set:
+    - code: '10148'
+  - intent: details
+  - action: action_details
+  - slot_was_set:
+    - code: '10148'
+  - intent: thanks
+  - action: utter_thanks
+
+- story: story_hons_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: honours
+    entities:
+    - code: c23467
+  - slot_was_set:
+    - code: c23467
+  - action: action_hons
+  - slot_was_set:
+    - code: '23467'
+
+- story: story_prof_prac
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prof_prac
+    entities:
+    - code: c10148
+  - slot_was_set:
+    - code: c10148
+  - action: action_prof_prac
+  - slot_was_set:
+    - code: '10148'
+  - intent: details
+  - action: action_details
+  - slot_was_set:
+    - code: '10148'
+  - intent: thanks
+  - action: utter_thanks
+
+- story: story_prof_prac_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: prof_prac
+    entities:
+    - code: c23467
+  - slot_was_set:
+    - code: c23467
+  - action: action_prof_prac
+  - slot_was_set:
+    - code: '23467'
+
+- story: story_combined
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+  - slot_was_set:
+    - code: c10148
+  - action: action_details
+  - slot_was_set:
+    - code: '10148'
+  - intent: combined
+  - slot_was_set:
+    - code: c10148
+  - action: action_combined
+  - slot_was_set:
+    - code: '10148'
+  - intent: thanks
+  - action: utter_thanks
+
+- story: story_credit_points
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: credit_points
+    entities:
+    - code: c23467
+  - slot_was_set:
+    - code: c23467
+  - action: action_credit_points
+
+- story: story_credit_points_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - code: '41004'
+  - slot_was_set:
+    - code: '41004'
+  - action: action_details
+  - slot_was_set:
+    - code: '41004'
+  - intent: credit_points
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '41004'
+  - intent: credit_points
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '10219'
+
+- story: story_credit_points_02
+  steps:
+  - intent: details
+    entities:
+    - code: c12390
+  - slot_was_set:
+    - code: c12390
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '12390'
+  - intent: credit_points
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '12390'
+
+- story: story_credit_points_03
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - name: bachelor in business bachelor of science in it
+  - action: action_details
+  - slot_was_set:
+    - code: '10219'
+  - intent: credit_points
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '10219'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_credit_points_04
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: credit_points
+    entities:
+    - code: c12932
+  - slot_was_set:
+    - code: c12932
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '12932'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_credit_points_05
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: credit_points
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '10219'
+  - intent: details
+  - slot_was_set:
+    - code: '10219'
+  - action: action_details
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_duration
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - code: '41004'
+  - slot_was_set:
+    - code: '41004'
+  - action: action_details
+  - slot_was_set:
+    - code: '41004'
+  - intent: duration
+  - action: action_duration
+  - slot_was_set:
+    - code: '41004'
+  - intent: duration
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_duration
+  - slot_was_set:
+    - code: '10219'
+
+- story: story_duration_01
+  steps:
+  - intent: details
+    entities:
+    - code: c12390
+  - slot_was_set:
+    - code: c12390
+  - action: action_credit_points
+  - slot_was_set:
+    - code: '12390'
+  - intent: duration
+  - action: action_duration
+  - slot_was_set:
+    - code: '12390'
+
+- story: story_duration_02
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - name: bachelor in business bachelor of science in it
+  - action: action_details
+  - slot_was_set:
+    - code: '10219'
+  - intent: duration
+  - action: action_duration
+  - slot_was_set:
+    - code: '10219'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_duration_04
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: duration
+    entities:
+    - code: c12932
+  - slot_was_set:
+    - code: c12932
+  - action: action_duration
+  - slot_was_set:
+    - code: '12932'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_fees
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fees
+    entities:
+    - code: c10148
+  - slot_was_set:
+    - code: c10148
+  - action: action_fees
+  - slot_was_set:
+    - code: '10148'
+  - intent: details
+  - action: action_details
+  - slot_was_set:
+    - code: '10148'
+  - intent: thanks
+  - action: utter_thanks
+
+- story: story_fees_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fees
+    entities:
+    - code: c23467
+  - slot_was_set:
+    - code: c23467
+  - action: action_fees
+  - slot_was_set:
+    - code: '23467'
+
+- story: story_atar
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+  - intent: atar
+    entities:
+    - code: c12932
+  - slot_was_set:
+    - code: c12932
+  - action: action_atar
+  - slot_was_set:
+    - code: '12932'
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_atar_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_details
+  - slot_was_set:
+    - code: '10219'
+  - intent: atar
+  - slot_was_set:
+    - code: '10219'
+  - action: action_atar
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: story_years
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: years
+    entities:
+    - code: '12932'
+  - slot_was_set:
+    - code: '12932'
+  - action: action_years
+
+- story: story_years_entities
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: years_entities
+    entities:
+    - code: '12932'
+    - name: Bachelor of Information Technology
+  - slot_was_set:
+    - code: '12932'
+  - slot_was_set:
+    - name: Bachelor of Information Technology
+  - action: action_years_entities
+
+- story: story_list
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: majors
+    - name: china
+  - action: action_list
+
+- story: story_list_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: majors
+    - name: china
+  - action: action_list
+  - intent: parent
+  - action: action_parent
+  - slot_was_set:
+    - code: '41004'
+  - intent: greet
+  - action: utter_greet
+  - intent: details
+    entities:
+    - code: '41004'
+  - slot_was_set:
+    - code: '41004'
+  - action: action_details
+  - slot_was_set:
+    - code: '41004'
+  - intent: parent
+  - action: action_parent
+  - slot_was_set:
+    - code: '41004'
+  - intent: children
+    entities:
+    - code: c10219
+  - slot_was_set:
+    - code: c10219
+  - action: action_parent
+  - slot_was_set:
+    - code: '10219'
+
+- story: story_parent_01
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: parent
+    entities:
+    - type: majors
+    - code: '41004'
+    - name: Master of Information Technology
+  - slot_was_set:
+    - code: '41004'
+  - action: action_parent
+
+- story: interactive_story_1
   steps:
   - intent: inform
     entities:
-    - code: 09019
+    - code: '09019'
   - slot_was_set:
-    - code: 09019
+    - code: '09019'
   - action: query_course_name

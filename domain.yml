@@ -1,63 +1,38 @@
 version: '2.0'
-config:
-  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- compulsary_subjects:
-    use_entities: true
-- years:
-    use_entities: true
-- years_entities:
-    use_entities: true
-- greet:
-    use_entities: true
-- children:
-    use_entities: true
-- details:
-    use_entities: true
-- goodbye:
-    use_entities: true
-- thanks:
-    use_entities: true
-- affirm:
-    use_entities: true
-- list:
-    use_entities: true
-- honours:
-    use_entities: true
-- combined:
-    use_entities: true
-- duration:
-    use_entities: true
-- credit_points:
-    use_entities: true
-- what_can_you_do:
-    use_entities: true
-- prof_prac:
-    use_entities: true
-- fees:
-    use_entities: true
-- atar:
-    use_entities: true
-- parent:
-    use_entities: true
-- inform:
-    use_entities: true
+- inform
+- compulsary_subjects
+- years
+- years_entities
+- greet
+- children
+- details
+- goodbye
+- thanks
+- affirm
+- list
+- honours
+- combined
+- duration
+- credit_points
+- what_can_you_do
+- prof_prac
+- fees
+- atar
+- parent
 entities:
 - code
 - name
 - type
-# Do not insert auto-fill parameter!!!
 slots:
   code:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
+    type: text
     influence_conversation: true
   name:
-    type: rasa.shared.core.slots.TextSlot
-    initial_value: null
+    type: text
     influence_conversation: true
 responses:
   utter_code_does_not_exist:
@@ -181,23 +156,21 @@ responses:
   - text: You can ask me about any courses, majors, sub-majors, streams, choice blocks,  or subjects at UTS! You can ask me about the details such as name, credit points, or contents within a course or major.
   - text: Ask me about the name, credit points, contents, ATAR requirements, duration, for any course, majors, sub-majors, streams, choice blocks at UTS. You can also ask me if the degree is a honours degree or a degree with a diploma in professional practice.
 actions:
-- action_years
-- action_years_entities
+- action_atar
 - action_children
 - action_combined
-- action_details
-- action_hons
-- action_prof_prac
 - action_credit_points
+- action_details
 - action_duration
-- action_atar
 - action_fees
+- action_hons
 - action_list
 - action_parent
+- action_prof_prac
+- action_years
+- action_years_entities
+- query_course_name
 - utter_goodbye
 - utter_greet
 - utter_thanks
 - utter_what_can_you_do
-- query_course_name
-forms: {}
-e2e_actions: []
