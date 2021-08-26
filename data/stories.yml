@@ -6,16 +6,11 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
 
 - story: sad path 1
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
 
@@ -23,15 +18,12 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
 
-- story: inform
+- story: inform course name
   steps:
   - intent: inform
+    entities:
+    - code: 09019
   - slot_was_set:
-    - code: "Science"
+    - code: 09019
   - action: query_course_name
