@@ -241,6 +241,7 @@ nlu:
     - ello mate
     - heyhey
     - helloooo
+    - hi
 - intent: honours
   examples: |
     - Is the course a honours degree
