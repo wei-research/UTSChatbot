@@ -63,14 +63,17 @@ slots:
   code:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
+    auto_fill: true
     influence_conversation: true
   name:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
+    auto_fill: true
     influence_conversation: true
   type:
     type: rasa.shared.core.slots.TextSlot
     initial_value: null
+    auto_fill: true
     influence_conversation: true
 responses:
   utter_code_does_not_exist:
