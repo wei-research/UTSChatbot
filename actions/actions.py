@@ -10,6 +10,7 @@ from rasa_sdk.executor import CollectingDispatcher
 
 import sqlite3
 from sqlite3 import Error
+from fuzzywuzzy import process
 
 class QueryCourseName(Action):
 
@@ -53,6 +54,119 @@ class ActionList(Action):
                 dispatcher.utter_message('{} {}'.format(row[0], row[1]))
 
         return        
+
+class ActionHonours(Action):
+    def name(self) -> Text:
+        return "action_hons"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        conn = DbQueryingMethods.create_connection("./uts.db")
+        
+        return
+
+class ActionProfPrac(Action):
+    def name(self) -> Text:
+        return "action_prof_prac"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        conn = DbQueryingMethods.create_connection("./uts.db")
+        
+        return
+
+class ActionCombined(Action):
+    def name(self) -> Text:
+        return "action_combined"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        return
+
+class ActionCreditPoints(Action):
+    def name(self) -> Text:
+        return "action_credit_points"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        return
+
+class ActionDuration(Action):
+    def name(self) -> Text:
+        return "action_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        return
+
+class ActionFees(Action):
+    def name(self) -> Text:
+        return "action_fees"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        url = 'https://cis.uts.edu.au/fees/course-fees.cfm'
+
+        dispatcher.utter_message('For fee details please visit {}.'.format(url))
+        
+        return
+
+class ActionAtar(Action):
+    def name(self) -> Text:
+        return "action_atar"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                if not row[2]:
+                    dispatcher.utter_message("There is no ATAR cutoff for {} {}.".format(row[0], row[1]))
+                else:
+                    dispatcher.utter_message("The ATAR cutoff for {} {} is {}.".format(row[0], row[1], row[2]))
+                    print(f"The ATAR cutoff for {row[0]} {row[1]} is {row[2]}.")
+        return
+
+class ActionYear(Action):
+    def name(self) -> Text:
+        return "action_years"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return
 
 class DbQueryingMethods:
 
@@ -110,4 +224,16 @@ class DbQueryingMethods:
 
         #for row in rows:
         #    print(row)
+
+    def select_by_slot(conn, slot_name, slot_value):
+        """
+        Query all rows by slot
+        :param conn: the Connection object
+        :return:
+        """
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM courses WHERE "+slot_name+" LIKE ?", ('%'+slot_value+'%',))
+
+        rows = cur.fetchall()
+        return(rows)
 

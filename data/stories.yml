@@ -614,3 +614,21 @@ stories:
     - code: '09019'
   - action: query_course_name
   - action: action_default_fallback
+
+- story: interactive_story_1
+  steps:
+  - intent: atar
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_atar
+
+- story: interactive_story_1
+  steps:
+  - intent: atar
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_atar

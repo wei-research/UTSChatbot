@@ -334,9 +334,11 @@ nlu:
     - Tell me about the atar
     - Tell me the ATAR for [c10148](code)
     - What is the atar for [bachelor of business bachelor of science in it](name)
-    - What is tje atar for [c10210](code)
+    - What is the atar for [c10210](code)
     - Tell me the atar for [bachelor of science it](name)
     - What is the atar cutoff [12034](code)
+    - What is the ATAR for [09019](code)
+    - What is the ATAR for [Bachelor of Science](name)
 - intent: what_can_you_do
   examples: |
     - what can you do?
