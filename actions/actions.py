@@ -13,7 +13,9 @@ from sqlite3 import Error
 from fuzzywuzzy import process
 
 class QueryCourseName(Action):
-
+    """
+    Query course details
+    """
     def name(self) -> Text:
         return "query_course_name"  #name of action
 
@@ -32,6 +34,9 @@ class QueryCourseName(Action):
         return
 
 class ActionList(Action):
+    """
+    Generate list of courses and sub-structures
+    """
     def name(self) -> Text:
         return "action_list"
 
@@ -56,6 +61,9 @@ class ActionList(Action):
         return        
 
 class ActionHonours(Action):
+    """
+    Retrieve whether course is a honours degree
+    """
     def name(self) -> Text:
         return "action_hons"
 
@@ -64,10 +72,30 @@ class ActionHonours(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                if row[3] == 0:
+                    dispatcher.utter_message("{} {} is not a honours degree.".format(row[0], row[1]))
+                elif row[3] == 1:
+                    dispatcher.utter_message("{} {} is a honours degree.".format(row[0], row[1]))
         
         return
 
 class ActionProfPrac(Action):
+    """
+    Retrieve whether course offers a diploma in professional practice
+    """
     def name(self) -> Text:
         return "action_prof_prac"
 
@@ -76,10 +104,30 @@ class ActionProfPrac(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                if row[4] == 0:
+                    dispatcher.utter_message("{} {} does not come with a Diploma in Professional Practice.".format(row[0], row[1]))
+                elif row[4] == 1:
+                    dispatcher.utter_message("{} {} comes with a Diploma in Professional Practice.".format(row[0], row[1]))
         
         return
 
 class ActionCombined(Action):
+    """
+    Retrieve whether course is a combined degree
+    """
     def name(self) -> Text:
         return "action_combined"
 
@@ -88,6 +136,23 @@ class ActionCombined(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                if row[5] == 0:
+                    dispatcher.utter_message("{} {} is not a combined degree.".format(row[0], row[1]))
+                elif row[5] == 1:
+                    dispatcher.utter_message("{} {} is a combined degree.".format(row[0], row[1]))
 
         return
 
@@ -116,6 +181,9 @@ class ActionDuration(Action):
         return
 
 class ActionFees(Action):
+    """
+    Link URL for course fees
+    """
     def name(self) -> Text:
         return "action_fees"
 
@@ -130,6 +198,9 @@ class ActionFees(Action):
         return
 
 class ActionAtar(Action):
+    """
+    Retrieve ATAR requirements of course
+    """
     def name(self) -> Text:
         return "action_atar"
 
@@ -155,7 +226,7 @@ class ActionAtar(Action):
                     dispatcher.utter_message("There is no ATAR cutoff for {} {}.".format(row[0], row[1]))
                 else:
                     dispatcher.utter_message("The ATAR cutoff for {} {} is {}.".format(row[0], row[1], row[2]))
-                    print(f"The ATAR cutoff for {row[0]} {row[1]} is {row[2]}.")
+                    #print(f"The ATAR cutoff for {row[0]} {row[1]} is {row[2]}.")
         return
 
 class ActionYear(Action):

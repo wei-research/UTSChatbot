@@ -151,6 +151,8 @@ nlu:
     - is [bachelor in business bachelor in it](name) a combined degree?
     - is [bachelor of science in it](name) double degree
     - [bachelor of science in it bachelor of law](name) double degree or not?
+    - Is [09019](code) a combined degree
+    - Is [bachelor of science](name) a combined degree
 - intent: deny
   examples: |
     - no
@@ -257,6 +259,26 @@ nlu:
     - is [bachelor of it creative intelligence](name) honours
     - is [bachelor of it](name) honours
     - [c10293](code) honours or no?
+    - Is [09019](code) a honours degree
+    - Is [Bachelor of Science](name) a honours degree
+
+- intent: prof_prac
+  examples: |
+    - Does the course offer diploma in professional practice
+    - Does the course come with diploma in prof prac
+    - Does the course come with diploma in professional practice
+    - Is it diploma in professional practice
+    - Is [c90119](code) a prof prac
+    - Does [c10245](code) come with diploma prof prac
+    - does [bachelor science it](name) come w diploma prof prac
+    - is [bachelor of science in compsci](name) come with professional prac
+    - [bachelor of business bachelor of science in it](name) prof prac or no
+    - [c19293](code) professional practice
+    - is [bachelor of it creative intelligence](name) prof prac
+    - is [bachelor of it](name) professional practice
+    - [c10293](code) prof prac or no?
+    - Does [09019](code) have a diploma in professional practice
+    - Does [Bachelor of Science](name) have a diploma in professional practice
 - intent: list
   examples: |
     - Can you show me the [courses](type) at UTS

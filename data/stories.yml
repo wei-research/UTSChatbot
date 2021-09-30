@@ -632,3 +632,57 @@ stories:
   - slot_was_set:
     - name: Bachelor of Science
   - action: action_atar
+
+- story: interactive_story_1
+  steps:
+  - intent: honours
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_hons
+
+- story: interactive_story_1
+  steps:
+  - intent: honours
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_hons
+
+- story: interactive_story_1
+  steps:
+  - intent: prof_prac
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_prof_prac
+
+- story: interactive_story_1
+  steps:
+  - intent: prof_prac
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_prof_prac
+
+- story: interactive_story_1
+  steps:
+  - intent: combined
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_combined
+
+- story: interactive_story_1
+  steps:
+  - intent: combined
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_combined
