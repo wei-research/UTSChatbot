@@ -14,11 +14,18 @@ Conversational AI: [Rasa](https://rasa.com/)
 
 # Description
 The UTS FEIT Chatbot is a chatbot system that responds to user queries regarding courses and underlying sub-structures at the University of Technology Sydney (UTS). My primary responsibility revolves around the improvement of the data management aspects of the current [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot) and migrate its Rasa system into the current version of [Rasa X](https://rasa.com/docs/rasa-x/).  
+
+# Rasa Installation
+For Rasa installation and setup, these resources may assist you.  
+
+ - https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode
+ - https://www.youtube.com/watch?v=GwaSJUlB8oA  
+
 # System Instructions
 Please ensure that the Rasa system has been fully set up on your server and underlying packages have been installed.
 
- - The Chatbot communicates with the Rasa server using `rest` channel. Ensure that this is enabled or added in the `credentials.yml` file.
- - Open two terminals and run the following commands on each:
+ - The Chatbot communicates with the Rasa server using the `rest` channel. Ensure that this is enabled or added in the `credentials.yml` file.
+ - Open two terminals and run the following commands (from root directory) on each:
     ```
     rasa run -m models --enable-api --cors "*" --debug
     ```
