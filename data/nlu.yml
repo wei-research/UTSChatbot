@@ -96,6 +96,7 @@ nlu:
     - how many credits for [bachelor of law bachelor of it](name)
     - how many cp do i need to complete for [bachelor of business](name)
     - how many cp do i need for [c19204](code)
+    - How many cp for [37345](code)
 - intent: duration
   examples: |
     - How long is the course
@@ -261,7 +262,6 @@ nlu:
     - [c10293](code) honours or no?
     - Is [09019](code) a honours degree
     - Is [Bachelor of Science](name) a honours degree
-
 - intent: prof_prac
   examples: |
     - Does the course offer diploma in professional practice
@@ -282,37 +282,37 @@ nlu:
 - intent: list
   examples: |
     - Can you show me the [courses](type) at UTS
-    - I would like to know the [subjects](type) at UTS
-    - [Majors](type) please
-    - Tell me the [subjects](type) at UTS please
+    - I would like to know the [subjects](code) at UTS
+    - [Majors](code) please
+    - Tell me the [subjects](code) at UTS please
     - I would like to hear the [Subjects](code)
-    - I would loke to hear the [sub-majors](type), please
-    - Can you tell me the [subjamors](type)
-    - Please tell me the [streams](type) at UTS
-    - tell me about a [subject](type)
-    - i need to know about a [major](type)
+    - I would loke to hear the [sub-majors](code), please
+    - Can you tell me the [submajors](code)
+    - Please tell me the [streams](code) at UTS
+    - tell me about a [subject](code)
+    - i need to know about a [major](code)
     - Can you show me the [courses](type) about [game](name) at UTS
     - Can you show me [courses](type) about [china](name)
     - tell me any [courses](type) about [it](name)
-    - tell me any [choice blocks](type) about [design](name)
-    - I would like to know [subjects](type) about [app](name) at UTS
-    - I would like to know any [subjects](type) about [java](name) at UTS
-    - Tell me the [subjects](type) about [programming](name) please
-    - I would like to hear the [sub-majors](type) about [algorithm](name) please
-    - Can you tell me the [subjamors](type) about [artificial intelligence](name)
-    - I would like to know [app](name) [subjects](type) at UTS
-    - I would like to know any [java](name) [subjects](type) at UTS
-    - [animation](name) [majors](type) please
-    - Tell me all [programming](name) [subjects](type) please
-    - I want to hear [algorithm](name) [sub-majors](type)
-    - Can you tell me all [artificial intelligence](name) [subjamors](type)
-    - Please tell me the [streams](type) about [ai](name) at UTS
+    - tell me any [choice blocks](code) about [design](name)
+    - I would like to know [subjects](code) about [app](name) at UTS
+    - I would like to know any [subjects](code) about [java](name) at UTS
+    - Tell me the [subjects](code) about [programming](name) please
+    - I would like to hear the [sub-majors](code) about [algorithm](name) please
+    - Can you tell me the [submajors](code) about [artificial intelligence](name)
+    - I would like to know [app](name) [subjects](code) at UTS
+    - I would like to know any [java](name) [subjects](code) at UTS
+    - [animation](name) [majors](code) please
+    - Tell me all [programming](name) [subjects](code) please
+    - I want to hear [algorithm](name) [sub-majors](code)
+    - Can you tell me all [artificial intelligence](name) [submajors](code)
+    - Please tell me the [streams](code) about [ai](name) at UTS
     - Show me all [courses](type) about [it](name) at UTS
-    - tell me all [majors](type) at UTS
+    - tell me all [majors](code) at UTS
     - Tell me all [courses](type) UTS offer
-    - Tell me all [subjects](type) about [it](name) UTS offer
-    - Show me all [desgin](name) [subjects](type) at UTS
-    - show me all [animation](name) [choice blocks](type) please
+    - Tell me all [subjects](code) about [it](name) UTS offer
+    - Show me all [desgin](name) [subjects](code) at UTS
+    - show me all [animation](name) [choice blocks](code) please
     - Show me all [it](name) [courses](type)
     - tell me all [IT](name) [courses](type)
     - show me all [it master](name) [courses](type)
@@ -322,11 +322,12 @@ nlu:
     - What [master it](name) [courses](type)
     - what [bachelor IT](name) [courses](type)
     - What [courses](type) about [it](name) at UTS
-    - what [majors](type) at UTS
+    - what [majors](code) at UTS
     - What [courses](type) UTS offer
-    - What [subjects](type) about [it](name) UTS offer
-    - What [desgin](name) [subjects](type) at UTS
-    - what [animation](name) [choice blocks](type)
+    - What [subjects](code) about [it](name) UTS offer
+    - What [desgin](name) [subjects](code) at UTS
+    - what [animation](name) [choice blocks](code)
+    - Tell me about [subjects](code) at UTS please
 - intent: thanks
   examples: |
     - Thanks
@@ -392,15 +393,3 @@ nlu:
 - intent: compulsory_subjects
   examples: |
     - What are the compulsary subjects in the [32345]?
-- intent: inform
-  examples: |
-    - What is [09019](code)
-    - What is course name for [32567](code)
-    - What is course name for [32345](code)
-    - What is course name for [43234](code)
-    - What is [09019](code) called?
-    - What is [04222](code)
-    - [04405](code)
-    - [04404](code)?
-    - [04406](code) is called what?
-    - what is [09019](code)

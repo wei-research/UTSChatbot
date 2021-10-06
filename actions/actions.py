@@ -47,11 +47,31 @@ class ActionList(Action):
         conn = DbQueryingMethods.create_connection("./uts.db")
 
         slot_value = tracker.get_slot("type")
-        cur = conn.cursor()
-        cur.execute('SELECT * FROM {}'.format(str(slot_value)))
-        #cur.execute("SELECT * FROM ?", (str(slot_value),))
-        rows = cur.fetchall()
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
 
+        # Check for variations of slot code
+        if slot_code is not None:
+            slot_code = DbQueryingMethods.check_code(slot_code)
+
+        if slot_value == 'course':
+            slot_value = 'courses'
+
+        if slot_code == None and slot_name == None:
+            cur = conn.cursor()
+            cur.execute('SELECT * FROM {}'.format(str(slot_value)))
+            #cur.execute("SELECT * FROM ?", (str(slot_value),))
+            rows = cur.fetchall()
+        else:
+            # Filter courses by course name
+            if slot_value == 'courses':
+                rows = DbQueryingMethods.select_by_slot(conn, slot_value, 'name', slot_name)
+            else:
+                if slot_name == None:
+                    rows = DbQueryingMethods.select_by_slot(conn, 'sub_structures', 'type', slot_code)
+                else:
+                    rows = DbQueryingMethods.select_by_multiple_slot(conn, 'sub_structures', 'type', 'name', slot_name, slot_code)
+                    
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
@@ -77,9 +97,9 @@ class ActionHonours(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
         elif slot_code == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
@@ -109,9 +129,9 @@ class ActionProfPrac(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
         elif slot_code == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
@@ -141,9 +161,9 @@ class ActionCombined(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
         elif slot_code == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
@@ -165,6 +185,23 @@ class ActionCreditPoints(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         conn = DbQueryingMethods.create_connection("./uts.db")
+        
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'sub_structures', 'struc_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'sub_structures', 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                if not row[3]:
+                    dispatcher.utter_message("{} {} does not have any specified credit points.".format(row[0], row[1]))
+                else:
+                    dispatcher.utter_message("{} {} is worth {} credit points.".format(row[0], row[1], row[3]))
 
         return
 
@@ -214,9 +251,9 @@ class ActionAtar(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
         elif slot_code == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'name', slot_name)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
@@ -254,6 +291,21 @@ class DbQueryingMethods:
             print(e)
 
         return conn
+
+    def check_code(value):
+
+        if value.lower() == 'subject' or value.lower() == 'subjects':
+            value = 'sbj'
+        elif value.lower() == 'major' or value.lower() == 'majors':
+            value = 'maj'
+        elif value.lower() == 'submajor' or value.lower() == 'submajors' or value.lower() == 'sub-major' or value.lower() == 'sub-majors':
+            value = 'smj'
+        elif value.lower() == 'stream' or value.lower() == 'streams':
+            value = 'stm'
+        elif value.lower() == 'choice block' or value.lower() == 'choice blocks':
+            value = 'cbk'
+
+        return value
 
     def select_course(conn, value):
         """
@@ -296,14 +348,36 @@ class DbQueryingMethods:
         #for row in rows:
         #    print(row)
 
-    def select_by_slot(conn, slot_name, slot_value):
+    def select_by_slot(conn, table, slot_name, slot_value):
         """
         Query all rows by slot
         :param conn: the Connection object
         :return:
         """
-        cur = conn.cursor()
-        cur.execute("SELECT * FROM courses WHERE "+slot_name+" LIKE ?", ('%'+slot_value+'%',))
+
+        if slot_value == 'sbj':
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM "+table+" WHERE ifnull("+slot_name+",'') = ''")
+        else:
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM "+table+" WHERE "+slot_name+" LIKE ?", ('%'+slot_value+'%',))
+
+        rows = cur.fetchall()
+        return(rows)
+
+    def select_by_multiple_slot(conn, table, slot_name1, slot_name2, slot_code, slot_value):
+        """
+        Query all rows by slot
+        :param conn: the Connection object
+        :return:
+        """
+
+        if slot_value == 'sbj':
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM "+table+" WHERE ifnull("+slot_name1+",'') = '' AND "+slot_name2+" LIKE ?", ('%'+slot_code+'%',))
+        else:
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM "+table+" WHERE "+slot_name1+" LIKE ? AND "+slot_name2+" LIKE ?", ('%'+slot_value+'%','%'+slot_code+'%',))
 
         rows = cur.fetchall()
         return(rows)

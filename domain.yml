@@ -3,10 +3,9 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- honours
-- atar
 - greet
 - list
+- credit_points
 - inform
 - compulsary_subjects
 - years
@@ -16,12 +15,13 @@ intents:
 - goodbye
 - thanks
 - affirm
+- honours
 - combined
 - duration
-- credit_points
 - what_can_you_do
 - prof_prac
 - fees
+- atar
 - parent
 - compulsory_subjects
 - lookup:name
@@ -58,99 +58,107 @@ responses:
   - text: Goodbye!
   utter_greet:
   - buttons:
-    - payload: '/list{"type": "courses"}'
+    - payload: '/list{{"type": "courses"}}'
       title: all courses
-    - payload: '/list{"type": "majors"}'
+    - payload: '/list{{"type": "sub_structures"}}'
+      title: all sub_structures
+    - payload: '/list{{"code": "maj"}}'
       title: all majors
-    - payload: '/list{"type": "sub-majors"}'
+    - payload: '/list{{"code": "smj"}}'
       title: all sub-majors
-    - payload: '/list{"type": "subjects"}'
+    - payload: '/list{{"code": "sbj"}}'
       title: all subjects
-    - payload: '/list{"type": "streams"}'
+    - payload: '/list{{"code": "stm"}}'
       title: all streams
-    - payload: '/list{"type": "choice blocks"}'
+    - payload: '/list{{"code": "cbk"}}'
       title: all choice blocks
-    - payload: '/list{"type": "courses", "name": "master IT"}'
+    - payload: '/list{{"type": "courses", "name": "master of information technology"}}'
       title: Show me all master IT courses
-    - payload: '/list{"type": "subjects", "name": "animation"}'
+    - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{"type": "majors", "name": "china"}'
+    - payload: '/list{{"code": "maj", "name": "china"}}'
       title: Majors about china
-    - payload: '/list{"type": "courses", "name": "CBK90976"}'
+    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
-    - payload: '/children{"code": "CBK90976"}'
+    - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Hi there! I am Stu from UTS. Do you need any help with selecting course?
   - buttons:
-    - payload: '/list{"type": "courses"}'
-      title: courses
-    - payload: '/list{"type": "majors"}'
-      title: majors
-    - payload: '/list{"type": "sub-majors"}'
-      title: sub-majors
-    - payload: '/list{"type": "subjects"}'
-      title: subjects
-    - payload: '/list{"type": "streams"}'
-      title: streams
-    - payload: '/list{"type": "choice blocks"}'
-      title: choice blocks
-    - payload: '/list{"type": "courses", "name": "master IT"}'
+    - payload: '/list{{"type": "courses"}}'
+      title: all courses
+    - payload: '/list{{"type": "sub_structures"}}'
+      title: all sub_structures
+    - payload: '/list{{"code": "maj"}}'
+      title: all majors
+    - payload: '/list{{"code": "smj"}}'
+      title: all sub-majors
+    - payload: '/list{{"code": "sbj"}}'
+      title: all subjects
+    - payload: '/list{{"code": "stm"}}'
+      title: all streams
+    - payload: '/list{{"code": "cbk"}}'
+      title: all choice blocks
+    - payload: '/list{{"type": "courses", "name": "master of information technology"}}'
       title: Show me all master IT courses
-    - payload: '/list{"type": "subjects", "name": "animation"}'
+    - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{"type": "majors", "name": "china"}'
+    - payload: '/list{{"code": "maj", "name": "china"}}'
       title: Majors about china
-    - payload: '/list{"type": "courses", "name": "CBK90976"}'
+    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
-    - payload: '/children{"code": "CBK90976"}'
+    - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Ello mate! Ask me anything about UTS!
   - buttons:
-    - payload: '/list{"type": "courses"}'
-      title: courses
-    - payload: '/list{"type": "majors"}'
-      title: majors
-    - payload: '/list{"type": "sub-majors"}'
-      title: sub-majors
-    - payload: '/list{"type": "subjects"}'
-      title: subjects
-    - payload: '/list{"type": "streams"}'
-      title: streams
-    - payload: '/list{"type": "choice blocks"}'
-      title: choice blocks
-    - payload: '/list{"type": "courses", "name": "master IT"}'
+    - payload: '/list{{"type": "courses"}}'
+      title: all courses
+    - payload: '/list{{"type": "sub_structures"}}'
+      title: all sub_structures
+    - payload: '/list{{"code": "maj"}}'
+      title: all majors
+    - payload: '/list{{"code": "smj"}}'
+      title: all sub-majors
+    - payload: '/list{{"code": "sbj"}}'
+      title: all subjects
+    - payload: '/list{{"code": "stm"}}'
+      title: all streams
+    - payload: '/list{{"code": "cbk"}}'
+      title: all choice blocks
+    - payload: '/list{{"type": "courses", "name": "master of information technology"}}'
       title: Show me all master IT courses
-    - payload: '/list{"type": "subjects", "name": "animation"}'
+    - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{"type": "majors", "name": "china"}'
+    - payload: '/list{{"code": "maj", "name": "china"}}'
       title: Majors about china
-    - payload: '/list{"type": "courses", "name": "CBK90976"}'
+    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
-    - payload: '/children{"code": "CBK90976"}'
+    - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Hi! I am Stu. Do you have any questions about FEIT at UTS?
   - buttons:
-    - payload: '/list{"type": "courses"}'
-      title: courses
-    - payload: '/list{"type": "majors"}'
-      title: majors
-    - payload: '/list{"type": "sub-majors"}'
-      title: sub-majors
-    - payload: '/list{"type": "subjects"}'
-      title: subjects
-    - payload: '/list{"type": "streams"}'
-      title: streams
-    - payload: '/list{"type": "choice blocks"}'
-      title: choice blocks
-    - payload: '/list{"type": "courses", "name": "master IT"}'
+    - payload: '/list{{"type": "courses"}}'
+      title: all courses
+    - payload: '/list{{"type": "sub_structures"}}'
+      title: all sub_structures
+    - payload: '/list{{"code": "maj"}}'
+      title: all majors
+    - payload: '/list{{"code": "smj"}}'
+      title: all sub-majors
+    - payload: '/list{{"code": "sbj"}}'
+      title: all subjects
+    - payload: '/list{{"code": "stm"}}'
+      title: all streams
+    - payload: '/list{{"code": "cbk"}}'
+      title: all choice blocks
+    - payload: '/list{{"type": "courses", "name": "master of information technology"}}'
       title: Show me all master IT courses
-    - payload: '/list{"type": "subjects", "name": "animation"}'
+    - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{"type": "majors", "name": "china"}'
+    - payload: '/list{{"code": "maj", "name": "china"}}'
       title: Majors about china
-    - payload: '/list{"type": "courses", "name": "CBK90976"}'
+    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
-    - payload: '/children{"code": "CBK90976"}'
+    - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Hey, I am a chatbot from UTS. Ask me what I can do!
   utter_name_does_not_exist:

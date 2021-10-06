@@ -686,3 +686,175 @@ stories:
   - slot_was_set:
     - code: '09019'
   - action: action_combined
+
+- story: interactive_story_1
+  steps:
+  - intent: credit_points
+    entities:
+    - code: '37345'
+  - slot_was_set:
+    - code: '37345'
+  - action: action_credit_points
+
+- story: interactive_story_1
+  steps:
+  - intent: credit_points
+    entities:
+    - name: 'Linear'
+  - slot_was_set:
+    - name: 'Linear'
+  - action: action_credit_points
+
+- story: interactive_story_1
+  steps:
+  - intent: list
+    entities:
+    - code: subjects
+  - slot_was_set:
+    - code: subjects
+  - action: action_list
+  
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: sbj
+    - name: animation
+  - slot_was_set:
+    - code: sbj
+  - slot_was_set:
+    - name: animation
+  - action: action_list
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: maj
+    - name: china
+  - slot_was_set:
+    - code: maj
+  - slot_was_set:
+    - name: china
+  - action: action_list
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: stm
+  - slot_was_set:
+    - code: stm
+  - action: action_list
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: maj
+  - slot_was_set:
+    - code: maj
+  - action: action_list
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: smj
+  - slot_was_set:
+    - code: smj
+  - action: action_list
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: sbj
+  - slot_was_set:
+    - code: sbj
+  - action: action_list
+
+- story: interactive_story_4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - code: cbk
+  - slot_was_set:
+    - code: cbk
+  - action: action_list
+
+- story: interactive_story_5
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+  - slot_was_set:
+    - type: courses
+  - action: action_list
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+  - slot_was_set:
+    - type: courses
+  - action: action_list
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+    - name: master IT
+  - slot_was_set:
+    - name: master IT
+  - slot_was_set:
+    - type: courses
+  - action: action_list
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: sub_structures
+  - slot_was_set:
+    - type: sub_structures
+  - action: action_list
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+    - name: master of information technology
+  - slot_was_set:
+    - name: master of information technology
+  - slot_was_set:
+    - type: courses
+  - action: action_list
