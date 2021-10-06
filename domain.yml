@@ -1,46 +1,76 @@
 version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- list
-- credit_points
-- inform
-- compulsary_subjects
-- years
-- years_entities
-- children
-- details
-- goodbye
-- thanks
-- affirm
-- honours
-- combined
-- duration
-- what_can_you_do
-- prof_prac
-- fees
-- atar
-- parent
-- compulsory_subjects
-- lookup:name
-- deny
-- lookup:summary
-- lookup:types
+- greet:
+    use_entities: true
+- list:
+    use_entities: true
+- credit_points:
+    use_entities: true
+- inform:
+    use_entities: true
+- compulsary_subjects:
+    use_entities: true
+- years:
+    use_entities: true
+- years_entities:
+    use_entities: true
+- children:
+    use_entities: true
+- details:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- thanks:
+    use_entities: true
+- affirm:
+    use_entities: true
+- honours:
+    use_entities: true
+- combined:
+    use_entities: true
+- duration:
+    use_entities: true
+- what_can_you_do:
+    use_entities: true
+- prof_prac:
+    use_entities: true
+- fees:
+    use_entities: true
+- atar:
+    use_entities: true
+- parent:
+    use_entities: true
+- compulsory_subjects:
+    use_entities: true
+- lookup:name:
+    use_entities: true
+- deny:
+    use_entities: true
+- lookup:summary:
+    use_entities: true
+- lookup:types:
+    use_entities: true
 entities:
 - code
 - name
 - type
 slots:
   code:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
     influence_conversation: true
   name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
     influence_conversation: true
   type:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
     influence_conversation: true
 responses:
   utter_code_does_not_exist:
@@ -190,3 +220,5 @@ actions:
 - utter_greet
 - utter_thanks
 - utter_what_can_you_do
+forms: {}
+e2e_actions: []

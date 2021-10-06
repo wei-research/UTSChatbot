@@ -54,14 +54,17 @@ class ActionList(Action):
         if slot_code is not None:
             slot_code = DbQueryingMethods.check_code(slot_code)
 
+        # Check for course variations
         if slot_value == 'course':
             slot_value = 'courses'
 
+        # List all courses or sub_structures
         if slot_code == None and slot_name == None:
             cur = conn.cursor()
             cur.execute('SELECT * FROM {}'.format(str(slot_value)))
             #cur.execute("SELECT * FROM ?", (str(slot_value),))
             rows = cur.fetchall()
+        # Or list all majors, subjects, streams, choice blocks or sub-majors | courses by name
         else:
             # Filter courses by course name
             if slot_value == 'courses':
