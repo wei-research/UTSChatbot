@@ -106,8 +106,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
-      title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Hi there! I am Stu from UTS. Do you need any help with selecting course?
@@ -130,8 +128,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
-      title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Ello mate! Ask me anything about UTS!
@@ -154,8 +150,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
-      title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Hi! I am Stu. Do you have any questions about FEIT at UTS?
@@ -178,8 +172,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
-      title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
       title: What are contents of CBK90976
     text: Hey, I am a chatbot from UTS. Ask me what I can do!
