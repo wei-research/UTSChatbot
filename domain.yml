@@ -106,8 +106,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"code": "maj", "name": "china"}}'
-      title: Majors about china
     - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
@@ -132,8 +130,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"code": "maj", "name": "china"}}'
-      title: Majors about china
     - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
@@ -158,8 +154,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"code": "maj", "name": "china"}}'
-      title: Majors about china
     - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
@@ -184,8 +178,6 @@ responses:
       title: Show me all master IT courses
     - payload: '/list{{"code": "sbj", "name": "animation"}}'
       title: Show me all animation subjects
-    - payload: '/list{{"code": "maj", "name": "china"}}'
-      title: Majors about china
     - payload: '/list{{"type": "courses", "name": "CBK90976"}}'
       title: What courses contain CBK90976
     - payload: '/children{{"code": "CBK90976"}}'
