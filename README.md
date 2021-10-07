@@ -33,3 +33,7 @@ Please ensure that the Rasa system has been fully set up on your server and unde
     rasa run actions --cors "*" --debug
     ```
  - Once the Rasa server is running, interact with the chatbot by running `index.html` file in the browser.
+---------------------------------------------------------------------------------------------------------
+
+# Dataset  
+The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot). This contains information about UTS courses, subjects, majors, sub-majors etc. However, it is important to note that this is currently being used as a sample dataset as it does not compose of all the details about UTS courses as there are no publicly available APIs to be used for complete access. The datasets are stored under `data/csv/` which were converted into a SQLite3 database.
