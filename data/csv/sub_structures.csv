@@ -1,129 +1,129 @@
-90417,Switzerland Language and Culture,cbk,32
-90480,Chinese Language and Culture,cbk,32
-90481,Japanese Language and Culture,cbk,32
-90483,French Language and Culture,cbk,32
-90484,Spanish Language and Culture,cbk,32
-90485,German Language and Culture,cbk,32
-90486,Italian Language and Culture,cbk,32
-90005,Country major choice,cbk,96
-90169,Major Choice (Business),cbk,48
-90304,Electives,cbk,24
-90418,Bilingual Language and Culture (Switzerland),cbk,32
-90487,Chinese Language and Culture,cbk,16
-90488,Japanese Language and Culture,cbk,16
-90490,French Language and Culture,cbk,16
-90491,Spanish Language and Culture,cbk,16
-90492,German Language and Culture,cbk,16
-90493,Italian Language and Culture,cbk,16
-90494,Chinese Language and Culture,cbk,24
-90495,Japanese Language and Culture,cbk,24
-90497,French Language and Culture,cbk,24
-90498,Spanish Language and Culture,cbk,24
-90499,German Language and Culture,cbk,24
-90500,Italian Language and Culture,cbk,24
-90571,Electives,cbk,24
-90781,Major choice (Information Technology),cbk,48
-90782,Major/Two sub-majors/Electives,cbk,48
-90783,Electives,cbk,24
-90922,Options (Law UG),cbk,30
-90923,Options (Legal Theory UG),cbk,6
-91202,Choice (Advanced Technology),cbk,6
-91203,Choice (Technology),cbk,6
-91220,Major choice (Information Technology),cbk,48
-91728,Choice (Legal Futures and Technnology),cbk,
-91729,LLB options,cbk,30
-91738,Electives,cbk,12
-91780,Sub-major/Electives,cbk,36
-1156,Mathematical Analysis,maj,
-1157,Operations Research,maj,
-1158,Statistics,maj,
-2080,Business Information Systems Management,maj,
-2081,Data Analytics,maj,
-2092,Interaction Design,maj,
-3444,Enterprise Systems Development,maj,
-3445,Networking and Cybersecurity,maj,
-3519,Enterprise Systems Development,maj,
-8437,Accounting,maj,
-8438,Management,maj,
-8440,Finance,maj,
-8441,Marketing,maj,
-8442,International Business,maj,
-8446,Human Resource Management,maj,
-8981,Advertising and Marketing Communications,maj,
-9209,Economics,maj,
-9380,Latino USA,maj,
-9409,Colombia,maj,
-9430,Costa Rica,maj,
-9431,Argentina,maj,
-9432,Canada,maj,
-9433,Chile,maj,
-9434,China,maj,
-9435,France,maj,
-9436,Germany,maj,
-9437,Italy,maj,
-9438,Japan,maj,
-9439,Mexico,maj,
-9440,Spain,maj,
-9441,Switzerland,maj,
-9443,Legal Futures and Technnology,maj,
-10053,Data Analytics and Artificial Intelligence,maj,
-1010,Electronics and Computer Interfacing,smj,
-1012,Physics,smj,
-1026,Quantitative Management,smj,
-1032,Statistical Modelling,smj,
-2057,Scientific Computing,smj,
-2064,Business Information Systems Management,smj,
-2065,Data Analytics,smj,
-2066,Computer Graphics and Animation,smj,
-2067,Interaction Design,smj,
-3036,Enterprise Systems Development,smj,
-3037,Networking and Cybersecurity,smj,
-8157,Business Accounting,smj,
-8159,Employment Relations,smj,
-8160,International Management,smj,
-8181,Introductory Finance,smj,
-8188,Accounting for Small Business,smj,
-8196,Innovation,smj,
-8197,Marketing Principles,smj,
-8198,Advertising Principles,smj,
-9034,International Studies,smj,
-9035,Language other than English,smj,
-9036,Specialist Country Studies,smj,
-9040,Introductory Economics,smj,
-10051,Network Security,smj,
-90016,China: Specialist Country Studies stream,stm,
-90017,France: Specialist Country Studies stream,stm,
-90018,Germany: Specialist Country Studies stream,stm,
-90020,Italy: Specialist Country Studies stream,stm,
-90021,Japan: Specialist Country Studies stream,stm,
-90022,Latin America: Specialist Country Studies stream,stm,
-90023,Spain: Specialist Country Studies stream,stm,
-90273,Core subjects (Business),stm,48
-90506,Latino USA: Specialist Country Studies stream,stm,
-90507,Quebec: Specialist Country Studies stream,stm,
-90508,Switzerland (French): Specialist Country Studies stream,stm,
-90509,Switzerland (German): Specialist Country Studies stream,stm,
-90651,Core subjects (Information Technology),stm,
-90691,Law Stream,stm,
-90832,Core (Law),stm,
-90839,Core subjects (Creative Intelligence and Innovation),stm,
-90990,IT Work Integrated Learning Prog,stm,
-91157,Work Integrated Learning,stm,
-91158,Core subjects (Information Technology),stm,
-91172,Core Honours subjects (Computing Science),stm,
-91173,Core subjects (Computing Science),stm,
-91303,Core subjects (Games Development),stm,
-91314,China: International Studies stream,stm,
-91315,France: International Studies stream,stm,
-91316,Germany: International Studies stream,stm,
-91317,Italy: International Studies stream,stm,
-91318,Japan: International Studies stream,stm,
-91320,Latino USA: International Studies stream,stm,
-91321,Canada (Quebec): International Studies stream,stm,
-91322,Spain: International Studies stream,stm,
-91323,Switzerland (French): International Studies stream,stm,
-91324,Switzerland (German): International Studies stream,stm,
-91325,Switzerland (Italian): International Studies stream,stm,
+cbk90417,Switzerland Language and Culture,cbk,32
+cbk90480,Chinese Language and Culture,cbk,32
+cbk90481,Japanese Language and Culture,cbk,32
+cbk90483,French Language and Culture,cbk,32
+cbk90484,Spanish Language and Culture,cbk,32
+cbk90485,German Language and Culture,cbk,32
+cbk90486,Italian Language and Culture,cbk,32
+cbk90005,Country major choice,cbk,96
+cbk90169,Major Choice (Business),cbk,48
+cbk90304,Electives,cbk,24
+cbk90418,Bilingual Language and Culture (Switzerland),cbk,32
+cbk90487,Chinese Language and Culture,cbk,16
+cbk90488,Japanese Language and Culture,cbk,16
+cbk90490,French Language and Culture,cbk,16
+cbk90491,Spanish Language and Culture,cbk,16
+cbk90492,German Language and Culture,cbk,16
+cbk90493,Italian Language and Culture,cbk,16
+cbk90494,Chinese Language and Culture,cbk,24
+cbk90495,Japanese Language and Culture,cbk,24
+cbk90497,French Language and Culture,cbk,24
+cbk90498,Spanish Language and Culture,cbk,24
+cbk90499,German Language and Culture,cbk,24
+cbk90500,Italian Language and Culture,cbk,24
+cbk90571,Electives,cbk,24
+cbk90781,Major choice (Information Technology),cbk,48
+cbk90782,Major/Two sub-majors/Electives,cbk,48
+cbk90783,Electives,cbk,24
+cbk90922,Options (Law UG),cbk,30
+cbk90923,Options (Legal Theory UG),cbk,6
+cbk91202,Choice (Advanced Technology),cbk,6
+cbk91203,Choice (Technology),cbk,6
+cbk91220,Major choice (Information Technology),cbk,48
+cbk91728,Choice (Legal Futures and Technnology),cbk,
+cbk91729,LLB options,cbk,30
+cbk91738,Electives,cbk,12
+cbk91780,Sub-major/Electives,cbk,36
+maj01156,Mathematical Analysis,maj,
+maj01157,Operations Research,maj,
+maj01158,Statistics,maj,
+maj02080,Business Information Systems Management,maj,
+maj02081,Data Analytics,maj,
+maj02092,Interaction Design,maj,
+maj03444,Enterprise Systems Development,maj,
+maj03445,Networking and Cybersecurity,maj,
+maj03519,Enterprise Systems Development,maj,
+maj08437,Accounting,maj,
+maj08438,Management,maj,
+maj08440,Finance,maj,
+maj08441,Marketing,maj,
+maj08442,International Business,maj,
+maj08446,Human Resource Management,maj,
+maj08981,Advertising and Marketing Communications,maj,
+maj09209,Economics,maj,
+maj09380,Latino USA,maj,
+maj09409,Colombia,maj,
+maj09430,Costa Rica,maj,
+maj09431,Argentina,maj,
+maj09432,Canada,maj,
+maj09433,Chile,maj,
+maj09434,China,maj,
+maj09435,France,maj,
+maj09436,Germany,maj,
+maj09437,Italy,maj,
+maj09438,Japan,maj,
+maj09439,Mexico,maj,
+maj09440,Spain,maj,
+maj09441,Switzerland,maj,
+maj09443,Legal Futures and Technnology,maj,
+maj010053,Data Analytics and Artificial Intelligence,maj,
+smj01010,Electronics and Computer Interfacing,smj,
+smj01012,Physics,smj,
+smj01026,Quantitative Management,smj,
+smj01032,Statistical Modelling,smj,
+smj02057,Scientific Computing,smj,
+smj02064,Business Information Systems Management,smj,
+smj02065,Data Analytics,smj,
+smj02066,Computer Graphics and Animation,smj,
+smj02067,Interaction Design,smj,
+smj03036,Enterprise Systems Development,smj,
+smj03037,Networking and Cybersecurity,smj,
+smj08157,Business Accounting,smj,
+smj08159,Employment Relations,smj,
+smj08160,International Management,smj,
+smj08181,Introductory Finance,smj,
+smj08188,Accounting for Small Business,smj,
+smj08196,Innovation,smj,
+smj08197,Marketing Principles,smj,
+smj08198,Advertising Principles,smj,
+smj09034,International Studies,smj,
+smj09035,Language other than English,smj,
+smj09036,Specialist Country Studies,smj,
+smj09040,Introductory Economics,smj,
+smj010051,Network Security,smj,
+stm90016,China: Specialist Country Studies stream,stm,
+stm90017,France: Specialist Country Studies stream,stm,
+stm90018,Germany: Specialist Country Studies stream,stm,
+stm90020,Italy: Specialist Country Studies stream,stm,
+stm90021,Japan: Specialist Country Studies stream,stm,
+stm90022,Latin America: Specialist Country Studies stream,stm,
+stm90023,Spain: Specialist Country Studies stream,stm,
+stm90273,Core subjects (Business),stm,48
+stm90506,Latino USA: Specialist Country Studies stream,stm,
+stm90507,Quebec: Specialist Country Studies stream,stm,
+stm90508,Switzerland (French): Specialist Country Studies stream,stm,
+stm90509,Switzerland (German): Specialist Country Studies stream,stm,
+stm90651,Core subjects (Information Technology),stm,
+stm90691,Law Stream,stm,
+stm90832,Core (Law),stm,
+stm90839,Core subjects (Creative Intelligence and Innovation),stm,
+stm90990,IT Work Integrated Learning Prog,stm,
+stm91157,Work Integrated Learning,stm,
+stm91158,Core subjects (Information Technology),stm,
+stm91172,Core Honours subjects (Computing Science),stm,
+stm91173,Core subjects (Computing Science),stm,
+stm91303,Core subjects (Games Development),stm,
+stm91314,China: International Studies stream,stm,
+stm91315,France: International Studies stream,stm,
+stm91316,Germany: International Studies stream,stm,
+stm91317,Italy: International Studies stream,stm,
+stm91318,Japan: International Studies stream,stm,
+stm91320,Latino USA: International Studies stream,stm,
+stm91321,Canada (Quebec): International Studies stream,stm,
+stm91322,Spain: International Studies stream,stm,
+stm91323,Switzerland (French): International Studies stream,stm,
+stm91324,Switzerland (German): International Studies stream,stm,
+stm91325,Switzerland (Italian): International Studies stream,stm,
 01012-1,,xbk,6
 01026-1,,xbk,12
 01032-1,,xbk,18
@@ -630,202 +630,202 @@
 41182,System Security,,6
 41183,Privacy Preserving,,6
 41184,Secure Programming and Penetration Testing,,6
-90083,Electives,cbk,6
-90494,Chinese Language and Culture,cbk,24
-90495,Japanese Language and Culture,cbk,24
-90497,French Language and Culture,cbk,24
-90498,Spanish Language and Cultur,cbk,24
-90499,German Language and Culture,cbk,24
-90500,Italian Language and Culture,cbk,24
-90743,Electives (Engineering),cbk,12
-90802,Options,cbk,24
-90955,Choice (Professional Engineering),cbk,12
-90966,Choice (Professional Engineering),cbk,30
-90967,Major choice (Engineering PG),cbk,42
-90968,No specified major choice,cbk,30
-90969,Biomedical Engineering choice,cbk,18
-90970,Civil Engineering choice,cbk,18
-90971,Geotechnical Engineering choice,cbk,18
-90972,Structural Engineering choice,cbk,18
-90973,Computer Control Engineering choice,cbk,18
-90974,Environmental Engineering choice,cbk,18
-90976,Manufacturing Engineering and Management choice,cbk,18
-90977,Operations Engineering choice,cbk,18
-90978,Software Systems Engineering choice,cbk,18
-90980,Telecommunications and Electronics choice,cbk,18
-90981,Water Engineering choice,cbk,18
-90982,Choice (Professional Engineering),cbk,6
-91015,Major choice (Engineering PG),cbk,42
-91025,Electives (Information Technology),cbk,18
-91037,Choice (No specified major),cbk,30
-91038,Options (BIS),cbk,18
-91039,Options (Internetworking),cbk,18
-91040,Options (Data Analytics),cbk,18
-91041,Options (Multimedia),cbk,18
-91042,Options (Software development),cbk,18
-91043,Choice (No specific major),cbk,36
-91044,Elective (Information Technology),cbk,6
-91045,Electives (Information Technology),cbk,12
-91046,Major choice (IT),cbk,36
-91047,IT Project + Elective choice,cbk,18
-91048,Options (BIS),cbk,24
-91049,Options (Internetworking),cbk,24
-91050,Options (Data Analytics),cbk,24
-91051,Options (Multimedia),cbk,24
-91052,Options (Software development),cbk,24
-91053,Sub-major choice (IT),cbk,24
-91054,Choice (No specified sub-major),cbk,24
-91055,Options (BIS),cbk,12
-91056,Options (Internetworking),cbk,12
-91057,Options (Data Analytics),cbk,12
-91058,Options (Multimedia),cbk,12
-91059,Options (Software development),cbk,12
-91060,Research Project choice,cbk,48
-91061,Major choice (IT),cbk,30
-91085,Internetworking choice,cbk,36
-91086,Research choice,cbk,6
-91087,Internetworking core options,cbk,6
-91732, Choice (Interaction Design),cbk,24
-91733,Graduate Research Project + Elective option,cbk,24
-91737,Electives,cbk,24
-91738,Electives,cbk,12
-91739,Extension choice (Interaction Design),cbk,24
-91743,Cyber Security choice,cbk,24
-91744,Cyber Security choice,cbk,12
-91745,Cyber Security choice,cbk,18
-91747,Cyber Security Engineering choice,cbk,18
-91787,Structural Engineering core,cbk,12
-91788,Civil Engineering core,cbk,12
-91789,Geotechnical Engineering core,cbk,12
-91823,Stream choice (Information Systems),cbk,24
-91824,Choice (Complex Systems),cbk,12
-91849,Configurable Choice 1,cbk,24
-91850,Professional-focused choice,cbk,48
-91854,Configurable Choice 2,cbk,24
-91868,Communities of Practice-focused choice,cbk,24
-91869,Scientific Thinking choice,cbk,24
-91870,Technology-focused choice,cbk,24
-91873,Electrical Energy Systems choice,cbk,18
-91881,Leading Learning and Innovation choice,cbk,6
-2082,Business Information Systems,maj,
-2083,Internetworking,maj,
-2084,Data Analytics,maj,
-2085,Interactive Media,maj,
-2087,Business Information Systems,maj,
-2088,Internetworking,maj,
-2089,Data Analytics,maj,
-2090,Interactive Media,maj,
-2091,Software Development,maj,
-2093,Cyber Security,maj,
-2094,Cyber Security,maj,
-3476,Biomedical Engineering,maj,42
-3477,Civil Engineering,maj,42
-3478,Geotechnical Engineering,maj,42
-3479,Structural Engineering,maj,42
-3481,Computer Control Engineering,maj,42
-3482,Environmental Engineering,maj,42
-3484,Manufacturing Engineering and Management,maj,42
-3485,Operations,maj,42
-3486,Software Systems Engineering,maj,42
-3488,Telecommunications and Electronics,maj,42
-3489,Water Engineering,maj,42
-3528,Cyber Security Engineering,maj,42
-3531,Robotics,maj,42
-3535,Electrical Energy Systems,maj,42
+cbk90083,Electives,cbk,6
+cbk90494,Chinese Language and Culture,cbk,24
+cbk90495,Japanese Language and Culture,cbk,24
+cbk90497,French Language and Culture,cbk,24
+cbk90498,Spanish Language and Cultur,cbk,24
+cbk90499,German Language and Culture,cbk,24
+cbk90500,Italian Language and Culture,cbk,24
+cbk90743,Electives (Engineering),cbk,12
+cbk90802,Options,cbk,24
+cbk90955,Choice (Professional Engineering),cbk,12
+cbk90966,Choice (Professional Engineering),cbk,30
+cbk90967,Major choice (Engineering PG),cbk,42
+cbk90968,No specified major choice,cbk,30
+cbk90969,Biomedical Engineering choice,cbk,18
+cbk90970,Civil Engineering choice,cbk,18
+cbk90971,Geotechnical Engineering choice,cbk,18
+cbk90972,Structural Engineering choice,cbk,18
+cbk90973,Computer Control Engineering choice,cbk,18
+cbk90974,Environmental Engineering choice,cbk,18
+cbk90976,Manufacturing Engineering and Management choice,cbk,18
+cbk90977,Operations Engineering choice,cbk,18
+cbk90978,Software Systems Engineering choice,cbk,18
+cbk90980,Telecommunications and Electronics choice,cbk,18
+cbk90981,Water Engineering choice,cbk,18
+cbk90982,Choice (Professional Engineering),cbk,6
+cbk91015,Major choice (Engineering PG),cbk,42
+cbk91025,Electives (Information Technology),cbk,18
+cbk91037,Choice (No specified major),cbk,30
+cbk91038,Options (BIS),cbk,18
+cbk91039,Options (Internetworking),cbk,18
+cbk91040,Options (Data Analytics),cbk,18
+cbk91041,Options (Multimedia),cbk,18
+cbk91042,Options (Software development),cbk,18
+cbk91043,Choice (No specific major),cbk,36
+cbk91044,Elective (Information Technology),cbk,6
+cbk91045,Electives (Information Technology),cbk,12
+cbk91046,Major choice (IT),cbk,36
+cbk91047,IT Project + Elective choice,cbk,18
+cbk91048,Options (BIS),cbk,24
+cbk91049,Options (Internetworking),cbk,24
+cbk91050,Options (Data Analytics),cbk,24
+cbk91051,Options (Multimedia),cbk,24
+cbk91052,Options (Software development),cbk,24
+cbk91053,Sub-major choice (IT),cbk,24
+cbk91054,Choice (No specified sub-major),cbk,24
+cbk91055,Options (BIS),cbk,12
+cbk91056,Options (Internetworking),cbk,12
+cbk91057,Options (Data Analytics),cbk,12
+cbk91058,Options (Multimedia),cbk,12
+cbk91059,Options (Software development),cbk,12
+cbk91060,Research Project choice,cbk,48
+cbk91061,Major choice (IT),cbk,30
+cbk91085,Internetworking choice,cbk,36
+cbk91086,Research choice,cbk,6
+cbk91087,Internetworking core options,cbk,6
+cbk91732, Choice (Interaction Design),cbk,24
+cbk91733,Graduate Research Project + Elective option,cbk,24
+cbk91737,Electives,cbk,24
+cbk91738,Electives,cbk,12
+cbk91739,Extension choice (Interaction Design),cbk,24
+cbk91743,Cyber Security choice,cbk,24
+cbk91744,Cyber Security choice,cbk,12
+cbk91745,Cyber Security choice,cbk,18
+cbk91747,Cyber Security Engineering choice,cbk,18
+cbk91787,Structural Engineering core,cbk,12
+cbk91788,Civil Engineering core,cbk,12
+cbk91789,Geotechnical Engineering core,cbk,12
+cbk91823,Stream choice (Information Systems),cbk,24
+cbk91824,Choice (Complex Systems),cbk,12
+cbk91849,Configurable Choice 1,cbk,24
+cbk91850,Professional-focused choice,cbk,48
+cbk91854,Configurable Choice 2,cbk,24
+cbk91868,Communities of Practice-focused choice,cbk,24
+cbk91869,Scientific Thinking choice,cbk,24
+cbk91870,Technology-focused choice,cbk,24
+cbk91873,Electrical Energy Systems choice,cbk,18
+cbk91881,Leading Learning and Innovation choice,cbk,6
+maj02082,Business Information Systems,maj,
+maj02083,Internetworking,maj,
+maj02084,Data Analytics,maj,
+maj02085,Interactive Media,maj,
+maj02087,Business Information Systems,maj,
+maj02088,Internetworking,maj,
+maj02089,Data Analytics,maj,
+maj02090,Interactive Media,maj,
+maj02091,Software Development,maj,
+maj02093,Cyber Security,maj,
+maj02094,Cyber Security,maj,
+maj03476,Biomedical Engineering,maj,42
+maj03477,Civil Engineering,maj,42
+maj03478,Geotechnical Engineering,maj,42
+maj03479,Structural Engineering,maj,42
+maj03481,Computer Control Engineering,maj,42
+maj03482,Environmental Engineering,maj,42
+maj03484,Manufacturing Engineering and Management,maj,42
+maj03485,Operations,maj,42
+maj03486,Software Systems Engineering,maj,42
+maj03488,Telecommunications and Electronics,maj,42
+maj03489,Water Engineering,maj,42
+maj03528,Cyber Security Engineering,maj,42
+maj03531,Robotics,maj,42
+maj03535,Electrical Energy Systems,maj,42
 2086,Software Development,maj ,
-1052,Creative Writing,smj,24
-1053,Professional Writing,smj,24
-2038,Information Technology,smj,24
-8037,Operations and Supply Chain,smj,24
-8038,Strategic Management,smj,24
-8066,Human Resources Management,smj,24
-8075,Engineering Management,smj,24
-8098,Accounting Information Systems,smj,24
-8148,International Business,smj,24
-8153,Strategic Communication,smj,24
-8155,Sport Management,smj,24
-8184,Strategic Marketing,smj,24
-8201,Marketing Research,smj,24
-8202,Finance,smj,24
-8207,Marketing,smj,24
-8208,Management,smj,24
-8209,Not-for-Profit and Social Enterprise Management,smj,24
-8213,Event Management,smj,24
-9035,Language other than English,smj,24
-9037,Business Law,smj,24
-10028,International Exchange,smj,24
-10069,Business Information Systems,smj,24
-10070,Internetworking,smj,24
-10071,Data Analytics,smj,24
-10072,Interactive Media,smj,24
-10073,Software Development,smj,24
-10087,Sustainable Enterprise and Responsible Management,smj,24
-10093,Cyber Security,smj,24
-10099,Adaptive Leadership,smj,24
-10100,Quality Management,smj,24
-10102,Logistics,smj,24
-10103,Project Leadership,smj,24
-10104,Biomedical Engineering,smj,24
-10105,Systems Management,smj,24
-10106,Managing Enterprises,smj,24
-10107,Interaction Design,smj,24
-10108,Data Analytics,smj,24
-10109,Business Information Systems,smj,24
-10110,Internetworking,smj,24
-10111,Software Development,smj,24
-10112,Cyber Security,smj,24
-10113,Industry 4.0,smj,24
-10115,Fostering Learning Practices,smj,24
-10116,Leading Learning and Innovation,smj,24
-10118,Business Administration,smj,24
-10123,Scientific Design,smj,24
-10148,Architecture Design,smj,24
-90695,Core subjects,stm,24
-90859,Project stream,stm,12
-90867,Professional Engineering stream,stm,42
-90868,No specified major stream,stm,42
-90869,Biomedical Engineering core,stm,12
-90874,Computer Control Engineering core,stm,12
-90875,Environmental Engineering core,stm,12
-90877,Manufacturing Engineering and Management core,stm,12
-90878,Operations Engineering core,stm,12
-90879,Software Systems Engineering core,stm,12
-90881,Telecommunications and Electronics core,stm,12
-90882,Water Engineering core,stm,12
-90883,Professional Engineering stream,stm,18
-90968,Core stream (IT),stm,
-90974,Core subjects (BIS),stm,
-90979,Professional stream (IT),stm,
-90982,Project + three electives (one session),stm,
-90983,Project + one elective (two sessions),stm,
-91026,Internetworking core,stm,30
-91028,IT Project + Elective stream 1,stm,
-91029,IT Project + Elective stream 2,stm,
-91030,IT Project + Elective stream 3,stm,
-91195,Professional stream (Internetworking),stm,24
-91221,Core subjects A (Interaction Design),stm,24
-91222,Core subjects B (Interaction Design),stm,24
-91223,Graduate Research Project,stm,24
-91224,Graduate Research Project + Elective,stm,24
-91225,Data Analytics,stm,24
-91226,Games Design,stm,24
-91227,Interaction Programming,stm,24
-91237,Cyber Security Engineering core,stm,12
-91377,Complex Systems core,stm,12
-91378,Complex Systems stream,stm,24
-91387,Core Studios stream,stm,24
-91404,Core Studios stream,stm,24
-91405,Technology and Communities-focused,stm,48
-91412,Electrical Energy Systems core,stm,12
-91415,Genomics and Bioinformatics stream,stm,18
-91416,Microfluidics and 3D Bioprinting stream,stm,18
-91417,Bio-Instrumentation stream,stm,18
-91981,Project + three electives (two sessions),stm,
-90975,Core subjects (Internetworking),stm,
-90976,Core subjects (Data Analytics),stm,
-90977,Core subjects (Multimedia),stm,
-90978,Core subjects (Software Development),stm,
-91234,Cyber Security core subjects,stm,
+smj01052,Creative Writing,smj,24
+smj01053,Professional Writing,smj,24
+smj02038,Information Technology,smj,24
+smj08037,Operations and Supply Chain,smj,24
+smj08038,Strategic Management,smj,24
+smj08066,Human Resources Management,smj,24
+smj08075,Engineering Management,smj,24
+smj08098,Accounting Information Systems,smj,24
+smj08148,International Business,smj,24
+smj08153,Strategic Communication,smj,24
+smj08155,Sport Management,smj,24
+smj08184,Strategic Marketing,smj,24
+smj08201,Marketing Research,smj,24
+smj08202,Finance,smj,24
+smj08207,Marketing,smj,24
+smj08208,Management,smj,24
+smj08209,Not-for-Profit and Social Enterprise Management,smj,24
+smj08213,Event Management,smj,24
+smj09035,Language other than English,smj,24
+smj09037,Business Law,smj,24
+smj010028,International Exchange,smj,24
+smj010069,Business Information Systems,smj,24
+smj010070,Internetworking,smj,24
+smj010071,Data Analytics,smj,24
+smj010072,Interactive Media,smj,24
+smj010073,Software Development,smj,24
+smj010087,Sustainable Enterprise and Responsible Management,smj,24
+smj010093,Cyber Security,smj,24
+smj010099,Adaptive Leadership,smj,24
+smj010100,Quality Management,smj,24
+smj010102,Logistics,smj,24
+smj010103,Project Leadership,smj,24
+smj010104,Biomedical Engineering,smj,24
+smj010105,Systems Management,smj,24
+smj010106,Managing Enterprises,smj,24
+smj010107,Interaction Design,smj,24
+smj010108,Data Analytics,smj,24
+smj010109,Business Information Systems,smj,24
+smj010110,Internetworking,smj,24
+smj010111,Software Development,smj,24
+smj010112,Cyber Security,smj,24
+smj010113,Industry 4.0,smj,24
+smj010115,Fostering Learning Practices,smj,24
+smj010116,Leading Learning and Innovation,smj,24
+smj010118,Business Administration,smj,24
+smj010123,Scientific Design,smj,24
+smj010148,Architecture Design,smj,24
+stm90695,Core subjects,stm,24
+stm90859,Project stream,stm,12
+stm90867,Professional Engineering stream,stm,42
+stm90868,No specified major stream,stm,42
+stm90869,Biomedical Engineering core,stm,12
+stm90874,Computer Control Engineering core,stm,12
+stm90875,Environmental Engineering core,stm,12
+stm90877,Manufacturing Engineering and Management core,stm,12
+stm90878,Operations Engineering core,stm,12
+stm90879,Software Systems Engineering core,stm,12
+stm90881,Telecommunications and Electronics core,stm,12
+stm90882,Water Engineering core,stm,12
+stm90883,Professional Engineering stream,stm,18
+stm90968,Core stream (IT),stm,
+stm90974,Core subjects (BIS),stm,
+stm90979,Professional stream (IT),stm,
+stm90982,Project + three electives (one session),stm,
+stm90983,Project + one elective (two sessions),stm,
+stm91026,Internetworking core,stm,30
+stm91028,IT Project + Elective stream 1,stm,
+stm91029,IT Project + Elective stream 2,stm,
+stm91030,IT Project + Elective stream 3,stm,
+stm91195,Professional stream (Internetworking),stm,24
+stm91221,Core subjects A (Interaction Design),stm,24
+stm91222,Core subjects B (Interaction Design),stm,24
+stm91223,Graduate Research Project,stm,24
+stm91224,Graduate Research Project + Elective,stm,24
+stm91225,Data Analytics,stm,24
+stm91226,Games Design,stm,24
+stm91227,Interaction Programming,stm,24
+stm91237,Cyber Security Engineering core,stm,12
+stm91377,Complex Systems core,stm,12
+stm91378,Complex Systems stream,stm,24
+stm91387,Core Studios stream,stm,24
+stm91404,Core Studios stream,stm,24
+stm91405,Technology and Communities-focused,stm,48
+stm91412,Electrical Energy Systems core,stm,12
+stm91415,Genomics and Bioinformatics stream,stm,18
+stm91416,Microfluidics and 3D Bioprinting stream,stm,18
+stm91417,Bio-Instrumentation stream,stm,18
+stm91981,Project + three electives (two sessions),stm,
+stm90975,Core subjects (Internetworking),stm,
+stm90976,Core subjects (Data Analytics),stm,
+stm90977,Core subjects (Multimedia),stm,
+stm90978,Core subjects (Software Development),stm,
+stm91234,Cyber Security core subjects,stm,
 08104-1,,xbk,18
 10099-1,,xbk,12
 10102-1,,xbk,6

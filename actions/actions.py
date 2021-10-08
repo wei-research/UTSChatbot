@@ -80,7 +80,7 @@ class ActionHonours(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
@@ -112,7 +112,7 @@ class ActionProfPrac(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
@@ -144,7 +144,7 @@ class ActionCombined(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
@@ -173,7 +173,7 @@ class ActionCreditPoints(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'sub_structures', 'struc_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'sub_structures', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'sub_structures', 'name', slot_name)
         
@@ -205,7 +205,7 @@ class ActionDuration(Action):
         full_load = 48
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
@@ -235,7 +235,7 @@ class ActionDetails(Action):
         head_url = 'https://handbook.uts.edu.au/courses/'
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
@@ -281,7 +281,7 @@ class ActionAtar(Action):
         slot_name = tracker.get_slot("name")
 
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
         elif slot_code == None:
             rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
         
@@ -345,7 +345,7 @@ class DbQueryingMethods:
         :return:
         """
         cur = conn.cursor()
-        cur.execute("SELECT * FROM courses WHERE course_id LIKE ?", ('%'+str(value)+'%',))
+        cur.execute("SELECT * FROM courses WHERE id LIKE ?", ('%'+str(value)+'%',))
         #cur.execute(f"""SELECT * FROM courses WHERE name='{value}'""") #sample fstring
 
         #cur.execute("SELECT * FROM courses WHERE name LIKE '%Science%'")
