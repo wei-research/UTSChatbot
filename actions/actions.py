@@ -12,27 +12,6 @@ import sqlite3
 from sqlite3 import Error
 from fuzzywuzzy import process
 
-class QueryCourseName(Action):
-    """
-    Query course details
-    """
-    def name(self) -> Text:
-        return "query_course_name"  #name of action
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        #result = init_code(dispatcher, tracker, domain)
-
-        conn = DbQueryingMethods.create_connection("./uts.db")
-
-        slot_value = tracker.get_slot("code")   #get slot value?
-        #slot_name = "name" #if using name column in courses
-        get_query_results = DbQueryingMethods.select_course(conn, slot_value)
-        dispatcher.utter_message(text=str(get_query_results))
-
-        return
-
 class ActionList(Action):
     """
     Generate list of courses and sub-structures
@@ -55,8 +34,9 @@ class ActionList(Action):
             slot_code = DbQueryingMethods.check_code(slot_code)
 
         # Check for course variations
-        if slot_value == 'course':
-            slot_value = 'courses'
+        if slot_value is not None:
+            if slot_value == 'course':
+                slot_value = 'courses'
 
         # List all courses or sub_structures
         if slot_code == None and slot_name == None:
@@ -218,8 +198,55 @@ class ActionDuration(Action):
         
         conn = DbQueryingMethods.create_connection("./uts.db")
 
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        # Recommended full-time study worth of credit points in a year
+        full_load = 48
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                # Calculate years of full-time study
+                years = round(row[7]/full_load)
+                dispatcher.utter_message("{} {} has {} credit points which can be completed for {} years full time.".format(row[0], row[1], row[7], years))
+
         return
 
+class ActionDetails(Action):
+    def name(self) -> Text:
+        return "action_details"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        head_url = 'https://handbook.uts.edu.au/courses/'
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'course_id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
+        
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            for row in rows:
+                url = head_url + row[0] + '.html'
+                dispatcher.utter_message("{} {} is a course at UTS. For more info, visit {}.".format(row[0], row[1], url))
+
+        return
 class ActionFees(Action):
     """
     Link URL for course fees

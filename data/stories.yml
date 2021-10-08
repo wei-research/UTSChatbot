@@ -577,14 +577,7 @@ stories:
   - slot_was_set:
     - code: '41004'
   - action: action_parent
-- story: interactive_story_1
-  steps:
-  - intent: inform
-    entities:
-    - code: '09019'
-  - slot_was_set:
-    - code: '09019'
-  - action: query_course_name
+
 - story: interactive_story_1
   steps:
   - intent: greet
@@ -595,25 +588,6 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
-- story: Story from Conversation ID 222fa307748740e1ac42552848c8b98f
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: list
-    entities:
-    - type: courses
-  - slot_was_set:
-    - type: courses
-  - action: action_list
-  - intent: inform
-    entities:
-    - code: '09019'
-  - slot_was_set:
-    - type: courses
-  - slot_was_set:
-    - code: '09019'
-  - action: query_course_name
-  - action: action_default_fallback
 
 - story: interactive_story_1
   steps:
@@ -858,3 +832,39 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+
+- story: interactive_story_1
+  steps:
+  - intent: duration
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_duration
+
+- story: interactive_story_2
+  steps:
+  - intent: duration
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_duration
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_details
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_details

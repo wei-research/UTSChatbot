@@ -112,6 +112,8 @@ nlu:
     - What is the duration for [bachelor of science in it](name)
     - What is the duration [bachelor of business bachelor of science it](name)
     - How long years [bscit](name)
+    - How many years is [09019](code)
+    - How long is [Bachelor of Science](name)
 - intent: affirm
   examples: |
     - okay
@@ -196,6 +198,7 @@ nlu:
     - what is it about
     - id like to know more about it
     - can you tell me about the subject [41004](code)
+    - Please tell me about [of](name) [Bachelor of Science](name)
 - intent: goodbye
   examples: |
     - Bye
