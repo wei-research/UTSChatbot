@@ -868,3 +868,48 @@ stories:
   - slot_was_set:
     - code: '09019'
   - action: action_details
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - code: '08437'
+  - slot_was_set:
+    - code: '08437'
+  - action: action_details
+
+- story: interactive_story_3
+  steps:
+  - intent: details
+    entities:
+    - name: data structure
+  - slot_was_set:
+    - name: data structure
+  - action: action_details
+
+- story: interactive_story_4
+  steps:
+  - intent: details
+    entities:
+    - code: '10923'
+  - slot_was_set:
+    - code: '10923'
+  - action: action_details
+
+- story: interactive_story_5
+  steps:
+  - intent: details
+    entities:
+    - code: '1234'
+  - slot_was_set:
+    - code: '1234'
+  - action: action_details
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - code: '09019'
+  - slot_was_set:
+    - code: '09019'
+  - action: action_details

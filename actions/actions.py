@@ -31,7 +31,7 @@ class ActionList(Action):
 
         # Check for variations of slot code
         if slot_code is not None:
-            slot_code = DbQueryingMethods.check_code(slot_code)
+            slot_code = check_code(slot_code)
 
         # Check for course variations
         if slot_value is not None:
@@ -232,19 +232,16 @@ class ActionDetails(Action):
         slot_code = tracker.get_slot("code")
         slot_name = tracker.get_slot("name")
 
-        head_url = 'https://handbook.uts.edu.au/courses/'
-
         if slot_name == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'id', slot_code)
+            rows = DbQueryingMethods.query_tables(conn, 'id', slot_code)
         elif slot_code == None:
-            rows = DbQueryingMethods.select_by_slot(conn, 'courses', 'name', slot_name)
+            rows = DbQueryingMethods.query_tables(conn, 'name', slot_name)
         
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
             for row in rows:
-                url = head_url + row[0] + '.html'
-                dispatcher.utter_message("{} {} is a course at UTS. For more info, visit {}.".format(row[0], row[1], url))
+                dispatcher.utter_message("{} {} is a {} at UTS. For more info, visit {}.".format(row[0], row[1], get_type(row[0]), get_url(row[0])))
 
         return
 class ActionFees(Action):
@@ -321,62 +318,19 @@ class DbQueryingMethods:
             print(e)
 
         return conn
-
-    def check_code(value):
-
-        if value.lower() == 'subject' or value.lower() == 'subjects':
-            value = 'sbj'
-        elif value.lower() == 'major' or value.lower() == 'majors':
-            value = 'maj'
-        elif value.lower() == 'submajor' or value.lower() == 'submajors' or value.lower() == 'sub-major' or value.lower() == 'sub-majors':
-            value = 'smj'
-        elif value.lower() == 'stream' or value.lower() == 'streams':
-            value = 'stm'
-        elif value.lower() == 'choice block' or value.lower() == 'choice blocks':
-            value = 'cbk'
-
-        return value
-
-    def select_course(conn, value):
+    
+    def query_tables(conn, field, value):
         """
-        Query tasks by priority
+        Query courses and sub_structure tables
         :param conn: the Connection object
         :param priority:
         :return:
         """
         cur = conn.cursor()
-        cur.execute("SELECT * FROM courses WHERE id LIKE ?", ('%'+str(value)+'%',))
-        #cur.execute(f"""SELECT * FROM courses WHERE name='{value}'""") #sample fstring
+        cur.execute("SELECT id, name FROM courses WHERE "+field+" LIKE ? UNION SELECT id, name FROM sub_structures WHERE "+field+" LIKE ?", ('%'+value+'%','%'+value+'%',))
 
-        #cur.execute("SELECT * FROM courses WHERE name LIKE '%Science%'")
         rows = cur.fetchall()
-        #print(rows)
-        
-        if len(list(rows)) < 1:
-            return "There are no matches for your query."
-        else:
-            for row in rows:
-                #return[print(f"UTS offers {row[1]} at {row[6]}.")]
-                return f"UTS offers {row[1]} at {row[6]}."
-
-    def select_all_courses(conn):
-        """
-        Query all rows in the tasks table
-        :param conn: the Connection object
-        :return:
-        """
-        cur = conn.cursor()
-        cur.execute("SELECT * FROM courses")
-        rows = cur.fetchall()
-
-        if len(list(rows)) < 1:
-            return "There are no matches for your query."
-        else:
-            for row in rows:
-                return
-
-        #for row in rows:
-        #    print(row)
+        return(rows)
 
     def select_by_slot(conn, table, slot_name, slot_value):
         """
@@ -411,4 +365,66 @@ class DbQueryingMethods:
 
         rows = cur.fetchall()
         return(rows)
+
+####################################################################################################################################################
+# Helper functions
+
+def check_code(value):
+
+    if value.lower() == 'subject' or value.lower() == 'subjects':
+        value = 'sbj'
+    elif value.lower() == 'major' or value.lower() == 'majors':
+        value = 'maj'
+    elif value.lower() == 'submajor' or value.lower() == 'submajors' or value.lower() == 'sub-major' or value.lower() == 'sub-majors':
+        value = 'smj'
+    elif value.lower() == 'stream' or value.lower() == 'streams':
+        value = 'stm'
+    elif value.lower() == 'choice block' or value.lower() == 'choice blocks':
+        value = 'cbk'
+
+    return value
+
+def get_type(x):
+    if 'cbk' in x:
+        return "choice block"
+    elif 'smj' in x:
+        return "sub-major"
+    elif 'maj' in x:
+        return "major"
+    elif 'stm' in x:
+        return "stream"
+    elif 'c0' in x:
+        return "course"
+    elif 'c1' in x:
+        return "course"
+    else:
+        return "subject"
+
+def check_type(x):
+    if 'cbk' in x:
+        return "Directory"
+    elif 'smj' in x:
+        return "Directory"
+    elif 'maj' in x:
+        return "Directory"
+    elif 'stm' in x:
+        return "Directory"
+    elif 'c0' in x:
+        return "Course"
+    elif 'c1' in x:
+        return "Course"
+    else:
+        return "Subject"
+
+def get_url(x):
+    head_url = 'https://handbook.uts.edu.au/'
+    
+    if check_type(x) == 'Directory':
+        return head_url + 'directory/' + x + '.html'
+    elif check_type(x) == 'Course':
+        return head_url + 'courses/' + x + '.html'
+    elif check_type(x) == 'Subject':
+        return head_url + 'subjects/' + x + '.html'
+    else:
+        return 'No URL found'
 

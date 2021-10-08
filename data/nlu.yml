@@ -199,6 +199,12 @@ nlu:
     - id like to know more about it
     - can you tell me about the subject [41004](code)
     - Please tell me about [of](name) [Bachelor of Science](name)
+    - Details about [08437](code)
+    - Please tell me about [Bachelor of Science](name)
+    - What is [data structure](name)
+    - Tell me about [10923](code)
+    - Tell me about [1234](code)
+    - What is [09019](code)
 - intent: goodbye
   examples: |
     - Bye

@@ -37,3 +37,8 @@ Please ensure that the Rasa system has been fully set up on your server and unde
 
 # Dataset  
 The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot). This contains information about UTS courses, subjects, majors, sub-majors etc. However, it is important to note that this is currently being used as a sample dataset as it does not compose of all the details about UTS courses as there are no publicly available APIs to be used for complete access. The datasets are stored under `data/csv/` which were converted into a SQLite3 database.
+
+# To-do
+ - Tailor conversation flow and test every type of questions/responses
+ - Explore other types of questions
+ - Set up relations table
