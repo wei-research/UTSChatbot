@@ -351,16 +351,6 @@ class ActionParent(Action):
                 dispatcher.utter_message("{} {}".format(row[0], row[1]))
         return
 
-class ActionYear(Action):
-    def name(self) -> Text:
-        return "action_years"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        return
-
 class DbQueryingMethods:
 
     def create_connection(db_file):

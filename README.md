@@ -41,4 +41,4 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
 # To-do
  - Tailor conversation flow and test every type of questions/responses
  - Explore other types of questions
- - Set up relations table
+ - To include sub_structure relationships in relations table?
