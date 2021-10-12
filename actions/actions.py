@@ -293,6 +293,64 @@ class ActionAtar(Action):
                     #print(f"The ATAR cutoff for {row[0]} {row[1]} is {row[2]}.")
         return
 
+class ActionChildren(Action):
+    """
+    Retrieve sub_structures under a course
+    """
+    def name(self) -> Text:
+        return "action_children"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_children(conn, 'id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_children(conn, 'name', slot_name)
+
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            dispatcher.utter_message("Sub_structures: ")
+            for row in rows:
+                dispatcher.utter_message("{} {}".format(row[0], row[1]))
+        return
+
+class ActionParent(Action):
+    """
+    Retrieve courses from sub_structure
+    """
+    def name(self) -> Text:
+        return "action_parent"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        conn = DbQueryingMethods.create_connection("./uts.db")
+
+        slot_code = tracker.get_slot("code")
+        slot_name = tracker.get_slot("name")
+
+        if slot_name == None:
+            rows = DbQueryingMethods.select_parent(conn, 'id', slot_code)
+        elif slot_code == None:
+            rows = DbQueryingMethods.select_parent(conn, 'name', slot_name)
+
+        if len(list(rows)) < 1:
+            dispatcher.utter_message("There are no matches for your query.")
+        else:
+            dispatcher.utter_message("Courses: ")
+            for row in rows:
+                dispatcher.utter_message("{} {}".format(row[0], row[1]))
+        return
+
 class ActionYear(Action):
     def name(self) -> Text:
         return "action_years"
@@ -363,6 +421,18 @@ class DbQueryingMethods:
             cur = conn.cursor()
             cur.execute("SELECT * FROM "+table+" WHERE "+slot_name1+" LIKE ? AND "+slot_name2+" LIKE ?", ('%'+slot_value+'%','%'+slot_code+'%',))
 
+        rows = cur.fetchall()
+        return(rows)
+
+    def select_children(conn, field, value):
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM sub_structures WHERE id IN (SELECT struc_id FROM relations WHERE course_id IN (SELECT id FROM courses WHERE "+field+" LIKE ?))", ('%'+value+'%',))
+        rows = cur.fetchall()
+        return(rows)
+
+    def select_parent(conn, field, value):
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM courses WHERE id IN (SELECT course_id FROM relations WHERE struc_id IN (SELECT id FROM sub_structures WHERE "+field+" LIKE ?))", ('%'+value+'%',))
         rows = cur.fetchall()
         return(rows)
 

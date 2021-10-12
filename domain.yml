@@ -3,6 +3,8 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- parent
+- children
 - details
 - duration
 - greet
@@ -11,7 +13,6 @@ intents:
 - compulsary_subjects
 - years
 - years_entities
-- children
 - goodbye
 - thanks
 - affirm
@@ -21,7 +22,6 @@ intents:
 - prof_prac
 - fees
 - atar
-- parent
 - compulsory_subjects
 - lookup:name
 - deny

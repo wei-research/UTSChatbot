@@ -913,3 +913,39 @@ stories:
   - slot_was_set:
     - code: '09019'
   - action: action_details
+
+- story: interactive_story_1
+  steps:
+  - intent: children
+    entities:
+    - code: '09119'
+  - slot_was_set:
+    - code: '09119'
+  - action: action_children
+
+- story: interactive_story_2
+  steps:
+  - intent: children
+    entities:
+    - name: bachelor of science
+  - slot_was_set:
+    - name: bachelor of science
+  - action: action_children
+
+- story: interactive_story_3
+  steps:
+  - intent: parent
+    entities:
+    - code: '31250'
+  - slot_was_set:
+    - code: '31250'
+  - action: action_parent
+
+- story: interactive_story_4
+  steps:
+  - intent: parent
+    entities:
+    - name: Torts
+  - slot_was_set:
+    - name: Torts
+  - action: action_parent

@@ -44,6 +44,8 @@ nlu:
     - what sub-majors in [cbk23982](code)
     - what subjects do i need to take for that subject?
     - what subjects are in [c10219](code)
+    - What are the contents of [09119](code)
+    - what are subjects for [bachelor of science](name)
 - intent: parent
   examples: |
     - Which degrees contain [c91953](code)
@@ -69,6 +71,8 @@ nlu:
     - what [majors](type) contain [Bachelor of Information Technology](name)
     - Which [choice blocks](type) contain [Bachelor of Information Technology](name)
     - which [streams](type) contain [Bachelor of Information Technology](name)
+    - Which degree has [31250](code)
+    - Which degree contains [Torts](name)
 - intent: fees
   examples: |
     - How much does the course cost?
