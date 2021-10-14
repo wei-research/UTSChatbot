@@ -7,9 +7,9 @@ Major: Data Engineering
 
 Supervisor: [Wei Liu](https://www.uts.edu.au/staff/wei.liu)  
 Co-adivsor: [Xinghao Yang](https://xinghaoyang.github.io/)  
-Original chatbot repository: https://github.com/XinghaoYang/UTSChatbot  
+Original chatbot repository: [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot)  
 
-Chatbot widget source: https://github.com/JiteshGaikwad/Chatbot-Widget  
+Chatbot widget source: [Chatbot Widget](https://github.com/JiteshGaikwad/Chatbot-Widget)  
 Conversational AI: [Rasa](https://rasa.com/)  
 
 # Description
@@ -18,8 +18,8 @@ The UTS FEIT Chatbot is a chatbot system that responds to user queries regarding
 # Rasa Installation
 For Rasa installation and setup, these resources may assist you.  
 
- - https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode
- - https://www.youtube.com/watch?v=GwaSJUlB8oA  
+ - [Rasa Installation Documentation](https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode)
+ - [Rasa Installation/Setup Video Guide](https://www.youtube.com/watch?v=GwaSJUlB8oA)  
 
 # System Instructions
 Please ensure that the Rasa system has been fully set up on your server and underlying packages have been installed.
@@ -41,4 +41,3 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
 # To-do
  - Tailor conversation flow and test every type of questions/responses
  - Explore other types of questions
- - To include sub_structure relationships in relations table?
