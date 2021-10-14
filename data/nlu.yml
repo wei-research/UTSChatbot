@@ -78,13 +78,13 @@ nlu:
     - How much does the course cost?
     - How much is the course?
     - How much are the fees?
-    - How expensive is [c12039](code)
-    - Can you tell me the cost for [c10230](code)
     - Fees for [bachelor of it](name) please
     - How much is [c10231](code)?
     - What are the costs for [c19232](code)
     - How much does this course cost?
     - How much does [bachelor of science in it](name) cost?
+    - How expensive is [09119](code)
+    - Can you tell me the cost for [c10230](code)
 - intent: credit_points
   examples: |
     - How many credit points are in the course?

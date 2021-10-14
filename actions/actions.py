@@ -351,6 +351,8 @@ class ActionParent(Action):
                 dispatcher.utter_message("{} {}".format(row[0], row[1]))
         return
 
+####################################################################################################################################################
+# Database query functions
 class DbQueryingMethods:
 
     def create_connection(db_file):

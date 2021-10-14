@@ -3,6 +3,7 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- fees
 - parent
 - children
 - details
@@ -20,7 +21,6 @@ intents:
 - combined
 - what_can_you_do
 - prof_prac
-- fees
 - atar
 - compulsory_subjects
 - lookup:name

@@ -949,3 +949,21 @@ stories:
   - slot_was_set:
     - name: Torts
   - action: action_parent
+
+- story: interactive_story_1
+  steps:
+  - intent: fees
+    entities:
+    - code: '09119'
+  - slot_was_set:
+    - code: '09119'
+  - action: action_fees
+
+- story: interactive_story_2
+  steps:
+  - intent: fees
+    entities:
+    - code: c10230
+  - slot_was_set:
+    - code: c10230
+  - action: action_fees
