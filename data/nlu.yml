@@ -46,6 +46,8 @@ nlu:
     - what subjects are in [c10219](code)
     - What are the contents of [09119](code)
     - what are subjects for [bachelor of science](name)
+    - What are its contents?
+    - What are its contents
 - intent: parent
   examples: |
     - Which degrees contain [c91953](code)
@@ -73,6 +75,8 @@ nlu:
     - which [streams](type) contain [Bachelor of Information Technology](name)
     - Which degree has [31250](code)
     - Which degree contains [Torts](name)
+    - Which degrees has this?
+    - Which degrees contain [41004](code)
 - intent: fees
   examples: |
     - How much does the course cost?
@@ -85,6 +89,7 @@ nlu:
     - How much does [bachelor of science in it](name) cost?
     - How expensive is [09119](code)
     - Can you tell me the cost for [c10230](code)
+    - Fees please
 - intent: credit_points
   examples: |
     - How many credit points are in the course?
@@ -101,6 +106,7 @@ nlu:
     - how many cp do i need to complete for [bachelor of business](name)
     - how many cp do i need for [c19204](code)
     - How many cp for [37345](code)
+    - How many credit points is [41004](code)
 - intent: duration
   examples: |
     - How long is the course
@@ -209,6 +215,12 @@ nlu:
     - Tell me about [10923](code)
     - Tell me about [1234](code)
     - What is [09019](code)
+    - What is [Bachelor of Science](name)
+    - What is [41004](code)
+    - What is [09019](code)
+    - What is [31482](code)
+    - What is this course?
+    - What is it?
 - intent: goodbye
   examples: |
     - Bye
@@ -258,6 +270,8 @@ nlu:
     - heyhey
     - helloooo
     - hi
+    - Yo
+    - hey
 - intent: honours
   examples: |
     - Is the course a honours degree
@@ -275,6 +289,7 @@ nlu:
     - [c10293](code) honours or no?
     - Is [09019](code) a honours degree
     - Is [Bachelor of Science](name) a honours degree
+    - Is [c10148](code) honours?
 - intent: prof_prac
   examples: |
     - Does the course offer diploma in professional practice
@@ -292,6 +307,8 @@ nlu:
     - [c10293](code) prof prac or no?
     - Does [09019](code) have a diploma in professional practice
     - Does [Bachelor of Science](name) have a diploma in professional practice
+    - Is c23467 prof prac?
+    - Is [c04405](code) prof prac?
 - intent: list
   examples: |
     - Can you show me the [courses](type) at UTS
@@ -341,6 +358,7 @@ nlu:
     - What [desgin](name) [subjects](code) at UTS
     - what [animation](name) [choice blocks](code)
     - Tell me about [subjects](code) at UTS please
+    - I would like to know all the [courses](type) at UTS
 - intent: thanks
   examples: |
     - Thanks
@@ -363,6 +381,7 @@ nlu:
     - amazing, thanks
     - cool, thanks
     - cool thank you
+    - Thank you!
 - intent: atar
   examples: |
     - What is the atar requirements for this subject
@@ -375,6 +394,7 @@ nlu:
     - What is the atar cutoff [12034](code)
     - What is the ATAR for [09019](code)
     - What is the ATAR for [Bachelor of Science](name)
+    - What is the atar for [09019](code)
 - intent: what_can_you_do
   examples: |
     - what can you do?
@@ -384,6 +404,9 @@ nlu:
     - things you do
     - what are you
     - how do you help me
+    - what can you do
+    - What can you do?
+    - What can you do
 - intent: lookup:types
   examples: |
     - courses
