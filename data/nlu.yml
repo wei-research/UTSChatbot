@@ -48,6 +48,7 @@ nlu:
     - what are subjects for [bachelor of science](name)
     - What are its contents?
     - What are its contents
+    - What are the contents of [Master of Technology](name)?
 - intent: parent
   examples: |
     - Which degrees contain [c91953](code)
@@ -217,7 +218,6 @@ nlu:
     - What is [09019](code)
     - What is [Bachelor of Science](name)
     - What is [41004](code)
-    - What is [09019](code)
     - What is [31482](code)
     - What is this course?
     - What is it?
