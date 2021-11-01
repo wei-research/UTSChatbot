@@ -34,17 +34,17 @@ For Rasa installation and setup, these resources may assist you.
 Please ensure that the Rasa system has been fully set up on your server and underlying packages have been installed.
 
  - The Chatbot communicates with the Rasa server using the `rest` channel. Ensure that this is enabled or added in the `credentials.yml` file.
- - Open two terminals and run the following commands (from root directory) on each:
-    ```
-    rasa run -m models --enable-api --cors "*" --debug
-    ```
+ - Open two terminals and run the following commands (from root directory):
     ```
     rasa run actions --cors "*" --debug
+    ```
+    ```
+    rasa run -m models --enable-api --cors "*" --debug
     ```
  - Once the Rasa server is running, interact with the chatbot by running `index.html` file in the browser.  
 
 ## Rasa X  
-To initialise Rasa X for training and validation, open two terminals and run the following commands (from root directory):  
+ - To initialise Rasa X for training and validation, open two terminals and run the following commands (from root directory):
     ```
     rasa run actions -vv
     ```
