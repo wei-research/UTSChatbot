@@ -1539,3 +1539,51 @@ stories:
   - intent: goodbye
   - action: utter_goodbye
   - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+    - name: science
+  - slot_was_set:
+    - name: science
+  - slot_was_set:
+    - type: courses
+  - action: action_list
+  - action: action_reset_slot
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - code: null
+  - slot_was_set:
+    - type: null
+  - intent: details
+    entities:
+    - code: c04160
+  - slot_was_set:
+    - code: c04160
+  - action: action_details
+  - intent: duration
+  - action: action_duration
+  - intent: prof_prac
+  - action: action_prof_prac
+  - intent: combined
+  - action: action_combined
+  - intent: children
+  - action: action_children
+  - intent: details
+    entities:
+    - code: '32548'
+  - slot_was_set:
+    - code: '32548'
+  - action: action_details
+  - intent: credit_points
+  - action: action_credit_points
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart

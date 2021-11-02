@@ -108,6 +108,7 @@ nlu:
     - how many cp do i need for [c19204](code)
     - How many cp for [37345](code)
     - How many credit points is [41004](code)
+    - How many credit points is it worth?
 - intent: duration
   examples: |
     - How long is the course
@@ -125,6 +126,7 @@ nlu:
     - How long years [bscit](name)
     - How many years is [09019](code)
     - How long is [Bachelor of Science](name)
+    - How long to complete this?
 - intent: affirm
   examples: |
     - okay
@@ -251,6 +253,8 @@ nlu:
     - Tell me about [32548](code)
     - Tell me about [c10245](code)
     - Tell me about [78039](code)
+    - Tell me about [c04160](code)
+    - What is [32548](code)
 - intent: goodbye
   examples: |
     - Bye
@@ -339,6 +343,7 @@ nlu:
     - Does [Bachelor of Science](name) have a diploma in professional practice
     - Is c23467 prof prac?
     - Is [c04405](code) prof prac?
+    - Is it prof prac?
 - intent: list
   examples: |
     - Can you show me the [courses](type) at UTS
@@ -392,6 +397,7 @@ nlu:
     - Tell me about about [Bachelor of Science](name)
     - Tell me all [courses](type) about [Science](name) at UTS
     - Tell me all [courses](type) about [science](name) at UTS
+    - Tell me all [courses](type) about [science](name)
 - intent: thanks
   examples: |
     - Thanks
