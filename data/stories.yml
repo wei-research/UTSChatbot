@@ -1206,3 +1206,139 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - name: Data Analytics
+  - slot_was_set:
+    - name: Data Analytics
+  - action: action_details
+
+- story: interactive_story_2
+  steps:
+  - intent: details
+    entities:
+    - name: Network Security
+  - slot_was_set:
+    - name: Network Security
+  - action: action_details
+
+- story: interactive_story_3
+  steps:
+  - intent: details
+    entities:
+    - name: Internet of Things
+  - slot_was_set:
+    - name: Internet of Things
+  - action: action_details
+
+- story: interactive_story_4
+  steps:
+  - intent: details
+    entities:
+    - name: Equity and Trusts
+  - slot_was_set:
+    - name: Equity and Trusts
+  - action: action_details
+
+- story: interactive_story_5
+  steps:
+  - intent: details
+    entities:
+    - name: Sports Law
+  - slot_was_set:
+    - name: Sports Law
+  - action: action_details
+
+- story: interactive_story_6
+  steps:
+  - intent: details
+    entities:
+    - name: Citizenship and
+    - name: Immigration Law
+  - slot_was_set:
+    - name: Immigration Law
+  - action: action_details
+
+- story: interactive_story_7
+  steps:
+  - intent: details
+    entities:
+    - code: '76080'
+  - slot_was_set:
+    - code: '76080'
+  - action: action_details
+
+- story: interactive_story_8
+  steps:
+  - intent: details
+    entities:
+    - code: '76037'
+  - slot_was_set:
+    - code: '76037'
+  - action: action_details
+
+- story: interactive_story_9
+  steps:
+  - intent: details
+    entities:
+    - code: c09019
+  - slot_was_set:
+    - code: c09019
+  - action: action_details
+
+- story: interactive_story_10
+  steps:
+  - intent: details
+    entities:
+    - name: Bachelor of Science
+  - slot_was_set:
+    - name: Bachelor of Science
+  - action: action_details
+
+- story: interactive_story_11
+  steps:
+  - intent: details
+    entities:
+    - name: Master of Information Systems
+  - slot_was_set:
+    - name: Master of Information Systems
+  - action: action_details
+
+- story: interactive_story_12
+  steps:
+  - intent: details
+    entities:
+    - name: Law Stream
+  - slot_was_set:
+    - name: Law Stream
+  - action: action_details
+
+- story: interactive_story_13
+  steps:
+  - intent: details
+    entities:
+    - name: Introductory Finance
+  - slot_was_set:
+    - name: Introductory Finance
+  - action: action_details
+
+- story: interactive_story_14
+  steps:
+  - intent: details
+    entities:
+    - name: Network Servers
+  - slot_was_set:
+    - name: Network Servers
+  - action: action_details
+
+- story: interactive_story_15
+  steps:
+  - intent: details
+    entities:
+    - name: advanced data analytics
+  - slot_was_set:
+    - name: advanced data analytics
+  - action: action_details

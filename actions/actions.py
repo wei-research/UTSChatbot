@@ -58,6 +58,7 @@ class ActionList(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            dispatcher.utter_message("Here are your results!")
             for row in rows:
                 dispatcher.utter_message('{} {}'.format(row[0], row[1]))
 
@@ -87,6 +88,10 @@ class ActionHonours(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 if row[3] == 0:
                     dispatcher.utter_message("{} {} is not a honours degree.".format(row[0], row[1]))
@@ -119,6 +124,10 @@ class ActionProfPrac(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 if row[4] == 0:
                     dispatcher.utter_message("{} {} does not come with a Diploma in Professional Practice.".format(row[0], row[1]))
@@ -151,6 +160,10 @@ class ActionCombined(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 if row[5] == 0:
                     dispatcher.utter_message("{} {} is not a combined degree.".format(row[0], row[1]))
@@ -180,6 +193,10 @@ class ActionCreditPoints(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 if not row[3]:
                     dispatcher.utter_message("{} {} does not have any specified credit points.".format(row[0], row[1]))
@@ -212,6 +229,10 @@ class ActionDuration(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 # Calculate years of full-time study
                 years = round(row[7]/full_load)
@@ -240,6 +261,10 @@ class ActionDetails(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 dispatcher.utter_message("{} {} is a {} at UTS. For more info, visit {}.".format(row[0], row[1], get_type(row[0]), get_url(row[0])))
 
@@ -285,6 +310,10 @@ class ActionAtar(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
+            if slot_name == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are results for {}".format(slot_name))
             for row in rows:
                 if not row[2]:
                     dispatcher.utter_message("There is no ATAR cutoff for {} {}.".format(row[0], row[1]))
@@ -317,7 +346,10 @@ class ActionChildren(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
-            dispatcher.utter_message("Sub_structures: ")
+            if slot_name == None:
+                dispatcher.utter_message("Here are children results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are children results for {}".format(slot_name))
             for row in rows:
                 dispatcher.utter_message("{} {}".format(row[0], row[1]))
         return
@@ -346,7 +378,10 @@ class ActionParent(Action):
         if len(list(rows)) < 1:
             dispatcher.utter_message("There are no matches for your query.")
         else:
-            dispatcher.utter_message("Courses: ")
+            if slot_name == None:
+                dispatcher.utter_message("Here are course results for {}".format(slot_code))
+            elif slot_code == None:
+                dispatcher.utter_message("Here are course results for {}".format(slot_name))
             for row in rows:
                 dispatcher.utter_message("{} {}".format(row[0], row[1]))
         return

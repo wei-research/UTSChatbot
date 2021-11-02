@@ -221,6 +221,21 @@ nlu:
     - What is [31482](code)
     - What is this course?
     - What is it?
+    - What is [Data Analytics](name)?
+    - What is [Network Security](name)?
+    - What is [Internet of Things](name)?
+    - What is [Equity and Trusts](name)?
+    - What is [Sports Law](name)?
+    - What is [Citizenship and](name) [Immigration Law](name)?
+    - What is [76080](code)
+    - What is [76037](code)?
+    - [c09019](code)
+    - [Bachelor of Science](name)
+    - [Master of Information Systems](name)
+    - What is [Law Stream](name)?
+    - I'd like to know about [Introductory Finance](name)
+    - I'd like to know about [Network Servers](name)
+    - Can you tell me about [advanced data analytics](name)?
 - intent: goodbye
   examples: |
     - Bye
