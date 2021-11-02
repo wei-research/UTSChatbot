@@ -12,6 +12,8 @@ Original chatbot repository: [UTS FEIT Chatbot](https://github.com/XinghaoYang/U
 Chatbot widget source: [Chatbot Widget](https://github.com/JiteshGaikwad/Chatbot-Widget)  
 Conversational AI: [Rasa](https://rasa.com/)  
 
+Video Demonstration: [Chatbot Demonstration](https://youtu.be/7U9V1K7qq-4)  
+
 # Description
 The UTS FEIT Chatbot is a chatbot system that responds to user queries regarding courses and underlying sub-structures at the University of Technology Sydney (UTS). My primary responsibility revolves around the improvement of the data management aspects of the current [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot) and migrate its Rasa system into the current version of [Rasa X](https://rasa.com/docs/rasa-x/).  
 
