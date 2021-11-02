@@ -63,4 +63,10 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
 `data/stories.md` contains training data to train the chatbot's conversation and dialogue management that represents the conversation between user and chatbot.
 
 ## Domain  
-`domain.yml` establishes the universe in which the chatbot operates and defines its inputs and outputs.
+`domain.yml` establishes the universe in which the chatbot operates and defines its inputs and outputs.  
+
+# Chatbot Snippets
+## Home screen  
+![ScreenShot](static/img/home.PNG)  
+## Chatbot  
+![ScreenShot](static/img/chatbot.PNG)  
