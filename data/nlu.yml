@@ -236,6 +236,21 @@ nlu:
     - I'd like to know about [Introductory Finance](name)
     - I'd like to know about [Network Servers](name)
     - Can you tell me about [advanced data analytics](name)?
+    - What is [08202](code)
+    - What is [01052](code)
+    - What is [91412](code)
+    - Tell me about [32606](code)
+    - What do you know about [42017](code)
+    - What is [57031](code)
+    - What is [49989](code)
+    - What is [60117](code)
+    - What is [90480](code)?
+    - What is [41061](code)
+    - What is [68315](code)
+    - Tell me about [c04160](code)
+    - Tell me about [32548](code)
+    - Tell me about [c10245](code)
+    - Tell me about [78039](code)
 - intent: goodbye
   examples: |
     - Bye
@@ -374,6 +389,9 @@ nlu:
     - what [animation](name) [choice blocks](code)
     - Tell me about [subjects](code) at UTS please
     - I would like to know all the [courses](type) at UTS
+    - Tell me about about [Bachelor of Science](name)
+    - Tell me all [courses](type) about [Science](name) at UTS
+    - Tell me all [courses](type) about [science](name) at UTS
 - intent: thanks
   examples: |
     - Thanks

@@ -530,6 +530,7 @@ stories:
     - type: majors
     - name: china
   - action: action_list
+  - action: action_reset_slot
 - story: story_list_01
   steps:
   - intent: greet
@@ -539,6 +540,7 @@ stories:
     - type: majors
     - name: china
   - action: action_list
+  - action: action_reset_slot
   - intent: parent
   - action: action_parent
   - slot_was_set:
@@ -588,6 +590,7 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_1
   steps:
@@ -687,6 +690,7 @@ stories:
   - slot_was_set:
     - code: subjects
   - action: action_list
+  - action: action_reset_slot
   
 
 - story: interactive_story_1
@@ -702,6 +706,7 @@ stories:
   - slot_was_set:
     - name: animation
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_2
   steps:
@@ -716,6 +721,7 @@ stories:
   - slot_was_set:
     - name: china
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_3
   steps:
@@ -727,6 +733,7 @@ stories:
   - slot_was_set:
     - code: stm
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_1
   steps:
@@ -738,6 +745,7 @@ stories:
   - slot_was_set:
     - code: maj
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_2
   steps:
@@ -749,6 +757,7 @@ stories:
   - slot_was_set:
     - code: smj
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_3
   steps:
@@ -760,6 +769,7 @@ stories:
   - slot_was_set:
     - code: sbj
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_4
   steps:
@@ -771,6 +781,7 @@ stories:
   - slot_was_set:
     - code: cbk
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_5
   steps:
@@ -782,6 +793,7 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_1
   steps:
@@ -793,6 +805,7 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_2
   steps:
@@ -807,6 +820,7 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_3
   steps:
@@ -818,6 +832,7 @@ stories:
   - slot_was_set:
     - type: sub_structures
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_1
   steps:
@@ -832,6 +847,7 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_1
   steps:
@@ -1206,6 +1222,7 @@ stories:
   - slot_was_set:
     - type: courses
   - action: action_list
+  - action: action_reset_slot
 
 - story: interactive_story_1
   steps:
@@ -1342,3 +1359,183 @@ stories:
   - slot_was_set:
     - name: advanced data analytics
   - action: action_details
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - code: '08202'
+  - slot_was_set:
+    - code: '08202'
+  - action: action_details
+
+- story: interactive_story_2
+  steps:
+  - intent: details
+    entities:
+    - code: '01052'
+  - slot_was_set:
+    - code: '01052'
+  - action: action_details
+
+- story: interactive_story_3
+  steps:
+  - intent: details
+    entities:
+    - code: '91412'
+  - slot_was_set:
+    - code: '91412'
+  - action: action_details
+
+- story: interactive_story_4
+  steps:
+  - intent: details
+    entities:
+    - code: '32606'
+  - slot_was_set:
+    - code: '32606'
+  - action: action_details
+
+- story: interactive_story_5
+  steps:
+  - intent: details
+    entities:
+    - code: '42017'
+  - slot_was_set:
+    - code: '42017'
+  - action: action_details
+
+- story: interactive_story_6
+  steps:
+  - intent: details
+    entities:
+    - code: '57031'
+  - slot_was_set:
+    - code: '57031'
+  - action: action_details
+
+- story: interactive_story_7
+  steps:
+  - intent: details
+    entities:
+    - code: '49989'
+  - slot_was_set:
+    - code: '49989'
+  - action: action_details
+
+- story: interactive_story_8
+  steps:
+  - intent: details
+    entities:
+    - code: '60117'
+  - slot_was_set:
+    - code: '60117'
+  - action: action_details
+
+- story: interactive_story_9
+  steps:
+  - intent: details
+    entities:
+    - code: '90480'
+  - slot_was_set:
+    - code: '90480'
+  - action: action_details
+
+- story: interactive_story_1
+  steps:
+  - intent: details
+    entities:
+    - code: '41061'
+  - slot_was_set:
+    - code: '41061'
+  - action: action_details
+
+- story: interactive_story_2
+  steps:
+  - intent: details
+    entities:
+    - code: '68315'
+  - slot_was_set:
+    - code: '68315'
+  - action: action_details
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+    - name: Science
+  - slot_was_set:
+    - name: Science
+  - slot_was_set:
+    - type: courses
+  - action: action_list
+  - action: action_reset_slot
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - code: null
+  - slot_was_set:
+    - type: null
+  - intent: details
+    entities:
+    - code: c04160
+  - slot_was_set:
+    - code: c04160
+  - action: action_details
+  - intent: children
+  - action: action_children
+  - intent: details
+    entities:
+    - code: '32548'
+  - slot_was_set:
+    - code: '32548'
+  - action: action_details
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list
+    entities:
+    - type: courses
+    - name: science
+  - slot_was_set:
+    - name: science
+  - slot_was_set:
+    - type: courses
+  - action: action_list
+  - action: action_reset_slot
+  - slot_was_set:
+    - name: null
+  - slot_was_set:
+    - code: null
+  - slot_was_set:
+    - type: null
+  - intent: details
+    entities:
+    - code: c10245
+  - slot_was_set:
+    - code: c10245
+  - action: action_details
+  - intent: children
+  - action: action_children
+  - intent: details
+    entities:
+    - code: '78039'
+  - slot_was_set:
+    - code: '78039'
+  - action: action_details
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_restart

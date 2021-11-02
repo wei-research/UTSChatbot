@@ -7,6 +7,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 
 import sqlite3
 from sqlite3 import Error
@@ -61,7 +62,7 @@ class ActionList(Action):
             dispatcher.utter_message("Here are your results!")
             for row in rows:
                 dispatcher.utter_message('{} {}'.format(row[0], row[1]))
-
+            dispatcher.utter_message("Please respond with the correct code.")
         return        
 
 class ActionHonours(Action):
@@ -352,6 +353,7 @@ class ActionChildren(Action):
                 dispatcher.utter_message("Here are children results for {}".format(slot_name))
             for row in rows:
                 dispatcher.utter_message("{} {}".format(row[0], row[1]))
+            dispatcher.utter_message("Feel free to learn more by responding with code.")
         return
 
 class ActionParent(Action):
@@ -384,8 +386,15 @@ class ActionParent(Action):
                 dispatcher.utter_message("Here are course results for {}".format(slot_name))
             for row in rows:
                 dispatcher.utter_message("{} {}".format(row[0], row[1]))
+            dispatcher.utter_message("Feel free to learn more by responding with code.")
         return
 
+class ResetSlot(Action):
+    def name(self):
+        return "action_reset_slot"
+
+    def run(self, dispatcher, tracker, domain):
+        return [SlotSet("name",None), SlotSet("code",None), SlotSet("type",None)]
 ####################################################################################################################################################
 # Database query functions
 class DbQueryingMethods:
