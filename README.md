@@ -98,7 +98,20 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
    ```
 
 ## Domain  
-`domain.yml` establishes the universe in which the chatbot operates and defines its inputs and outputs.  
+`domain.yml` establishes the universe in which the chatbot operates and defines its inputs and outputs. This also includes information about intents, entities, slots and actions. Additionally, basic utterances or responses are defined here (as opposed to custom actions - which will be discussed later). For example:
+   ```
+   responses:
+      utter_code_does_not_exist:
+      - text: '{code} does not exist in the UTS directory.'
+      - text: Sorry, I could not find {code} in the UTS directory.
+      - text: I cannot find {code} in the UTS directory.
+      utter_fallback:
+      - text: Sorry I did not recognise that input. Can you try again?
+      - text: Sorry I did not get that. Could you try that again?
+      utter_goodbye:
+      - text: Bye
+      - text: See you!
+   ```
 
 # Actions
 The chatbot will predict an action that is most relevant to the user message after it has been analysed based on the training components such as stories and NLU. These actions can be regular responses or custom actions that query a database to extract information based on said user query. The following table outlines describes each custom action developed to query the database.   
