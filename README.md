@@ -59,13 +59,64 @@ Please ensure that the Rasa system has been fully set up on your server and unde
 The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot). This contains information about UTS courses, subjects, majors, sub-majors etc. However, it is important to note that this is currently being used as a sample dataset as it does not compose of all the details about UTS courses as there are no publicly available APIs to be used for complete access. The datasets are stored under `data/csv/` which were trasnformed into a SQLite3 database.  
 
 ## NLU
-`data/nlu.md` contains training data of structured information about user messages to determine the intent of the user.
+`data/nlu.yml` contains training data of structured information about user messages to determine the intent of the user.  
+   ```
+   - intent: intent_name
+     examples: |
+      - sample sentence with [entity](entity_type)
+
+   - intent: list
+     examples: |
+      - Can you show me the [courses](type) at UTS
+      - I would like to know the [subjects](code) at UTS
+      - [Majors](code) please
+      - Tell me the [subjects](code) at UTS please
+      - I would like to hear the [Subjects](code)
+      - I would loke to hear the [sub-majors](code), please
+      - Can you tell me the [submajors](code)
+      - Please tell me the [streams](code) at UTS
+   ```
 
 ## Stories
-`data/stories.md` contains training data to train the chatbot's conversation and dialogue management that represents the conversation between user and chatbot.
+`data/stories.yml` contains training data to train the chatbot's conversation and dialogue management that represents the conversation between user and chatbot.  
+   ```
+   - story: story_name
+     steps:
+     - intent: intent_name
+     - action: action_name
+
+   - story: story_what_can_you_do_02
+     steps:
+     - intent: greet
+     - action: utter_greet
+     - intent: what_can_you_do
+     - action: utter_what_can_you_do
+     - intent: thanks
+     - action: utter_thanks
+     - intent: goodbye
+     - action: utter_goodbye
+   ```
 
 ## Domain  
 `domain.yml` establishes the universe in which the chatbot operates and defines its inputs and outputs.  
+
+# Actions
+The chatbot will predict an action that is most relevant to the user message after it has been analysed based on the training components such as stories and NLU. These actions can be regular responses or custom actions that query a database to extract information based on said user query. The following table outlines describes each custom action developed to query the database.   
+
+| Action                 | Description                                                                  |
+| ---------------------- |:----------------------------------------------------------------------------:|
+| action_atar            | Retrieve ATAR requirements of a course                                       |
+| action_children        | Retrieve list of sub-structures under a course or sub-structure              |
+| action_credit_points   | Retrieve number of credit points associated to course or sub-structure       |
+| action_combined        | Retrieve whether a course is a combined degree                               |
+| action_details         | Retrieve details about a course or sub-structure, including its website link |
+| action_duration        | Retrieve number of years to complete a course                                |
+| action_fees            | Retrieve information about fees                                              |
+| action_honours         | Retrieve whether a course is a honours degree                                |
+| action_list            | Retrieve list of sub-structures or courses associated to query               |
+| action_parent          | Retrieve list of parent courses or sub-structures associated to sub-structure|
+| action_prof_prac       | Retrieve whether a course offers a diploma in professional practice          |
+| utter_greet            | Responds to user with a regular greeting along with several buttons          |
 
 # Chatbot Snippets
 ## Home screen  
