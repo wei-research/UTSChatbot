@@ -114,6 +114,7 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
    ```
 
 # Actions
+## Custom Actions
 The chatbot will predict an action that is most relevant to the user message after it has been analysed based on the training components such as stories and NLU. These actions can be regular responses or custom actions that query a database to extract information based on said user query. The following table outlines describes each custom action developed to query the database.   
 
 | Action                 | Description                                                                  |
@@ -130,6 +131,9 @@ The chatbot will predict an action that is most relevant to the user message aft
 | action_parent          | Retrieve list of parent courses or sub-structures associated to sub-structure|
 | action_prof_prac       | Retrieve whether a course offers a diploma in professional practice          |
 | utter_greet            | Responds to user with a regular greeting along with several buttons          |
+
+## Python Script
+`actions.py` contains the backend processing involved to transform data and query the database in addition to running custom action calls that have been described above. Each action name corresponds to the same class in the Python file derived by the `name` method.  
 
 # Chatbot Snippets
 ## Home screen  
