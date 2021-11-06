@@ -235,6 +235,7 @@ To view tables in readable structure while in the sqlite3 terminal:
    SELECT * FROM courses;
    ```  
 # Chatbot Snippets
+Again credits to the [chatbot widget](https://github.com/JiteshGaikwad/Chatbot-Widget) for the interface.
 ### Home screen  
 ![ScreenShot](static/img/home.PNG)  
 ### Chatbot  
