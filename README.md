@@ -34,7 +34,7 @@ The chatbot responds to user queries about items such as credit points, duration
 The chatbot can retrieve sub-structures of a course or related sub-structured and vice-versa. For example, what subjects are under a course or what majors are under a course. This needs to be further developed as it currently only works from course -> sub-structure and vice-versa.  
 
 # Rasa Installation  
-## Rasa Guide  
+### Rasa Guide  
 For Rasa installation and setup, these resources may assist you.  
 
  - [Rasa Installation Documentation](https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode)
@@ -42,7 +42,7 @@ For Rasa installation and setup, these resources may assist you.
 
 Disregard steps to run `rasa init` as this involves creating an entirely new project.
 
-## Basic Installation
+### Basic Installation
 Assuming that Python and a virtual environment has been setup, these basic steps may immediately complete installation.
    ```
    pip install rasa-x --extra-index-url https://pypi.rasa.com/simple
@@ -54,7 +54,7 @@ If you followed the [video setup guide](https://www.youtube.com/watch?v=GwaSJUlB
 
 There may be conflicts in software packages depending on the environment that you run your system, seek out online assistance for this.  
 
-## Software/OS Versions
+### Software/OS Versions
  - Python 3.8.10  
  - pip 20.0.2  
  - Rasa 2.8.2  
@@ -63,12 +63,12 @@ There may be conflicts in software packages depending on the environment that yo
  - Ubuntu 20.04.2 LTS
 
 # System Instructions
-## Setup
+### Setup
 Train the chatbot.
    ```
    rasa train
    ```
-## Webchat  
+### Webchat  
 Please ensure that the Rasa system has been fully set up on your server and underlying packages have been installed.
 
  - The Chatbot communicates with the Rasa server using the `rest` channel. Ensure that this is enabled or added in the `credentials.yml` file.
@@ -81,7 +81,7 @@ Please ensure that the Rasa system has been fully set up on your server and unde
     ```
  - Once the Rasa server is running, interact with the chatbot by running `index.html` file in the browser.  
 
-## Rasa X  
+### Rasa X  
  - To initialise Rasa X for training and validation, open two terminals and run the following commands (from root directory):
     ```
     rasa run actions -vv
@@ -90,7 +90,7 @@ Please ensure that the Rasa system has been fully set up on your server and unde
     rasa x
     ```  
 
-## Other helpful commands
+### Other helpful commands
 Each of the following commands needs `rasa run actions` to be run on a separate terminal.
  - To test conversation in the command line, run:
     ```
@@ -102,10 +102,10 @@ Each of the following commands needs `rasa run actions` to be run on a separate 
     ```
 ---------------------------------------------------------------------------------------------------------
 # Datasets  
-## Database  
-The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot). This contains information about UTS courses, subjects, majors, sub-majors etc. However, it is important to note that this is currently being used as a sample dataset as it does not compose of all the details about UTS courses as there are no publicly available APIs to be used for complete access. The datasets are stored under `data/csv/` which were trasnformed into a SQLite3 database.  
+### Database  
+The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot). This contains information about UTS courses, subjects, majors, sub-majors etc. However, it is important to note that this is currently being used as a sample dataset as it does not compose of all the details about UTS courses as there are no publicly available APIs to be used for complete access. The datasets are stored under `data/csv/` which were trasnformed into a SQLite3 database `uts.db`.  
 
-## NLU
+### NLU
 `data/nlu.yml` contains training data of structured information about user messages to determine the intent of the user.  
    ```
    - intent: intent_name
@@ -124,7 +124,7 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
       - Please tell me the [streams](code) at UTS
    ```
 
-## Stories
+### Stories
 `data/stories.yml` contains training data to train the chatbot's conversation and dialogue management that represents the conversation between user and chatbot.  
    ```
    - story: story_name
@@ -144,7 +144,7 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
      - action: utter_goodbye
    ```
 
-## Domain  
+### Domain  
 `domain.yml` establishes the universe in which the chatbot operates and defines its inputs and outputs. This also includes information about intents, entities, slots and actions. Additionally, basic utterances or responses are defined here (as opposed to custom actions - which will be discussed later). For example:
    ```
    responses:
@@ -182,7 +182,7 @@ Stored in `nlu.yml`, intents represent the user messages that denote the objecti
 | what_you_can_do  | User asks about the features of the chatbot                                       |
 
 # Actions
-## Custom Actions
+### Custom Actions
 The chatbot will predict an action that is most relevant to the user message after it has been analysed based on the training components such as stories and NLU. These actions can be regular responses or custom actions that query a database to extract information based on said user query. The following table outlines describes each custom action developed to query the database.   
 
 | Action                 | Description                                                                  |
@@ -200,7 +200,7 @@ The chatbot will predict an action that is most relevant to the user message aft
 | action_prof_prac       | Retrieve whether a course offers a diploma in professional practice          |
 | utter_greet            | Responds to user with a regular greeting along with several buttons          |
 
-## Python Script
+### Python Script
 `actions.py` contains the backend processing involved to transform data and query the database in addition to running custom action calls that have been described above. Each action name corresponds to the same class in the Python file derived by the `name` method.  
 
 Some special functions include:  
@@ -235,9 +235,9 @@ To view tables in readable structure while in the sqlite3 terminal:
    SELECT * FROM courses;
    ```  
 # Chatbot Snippets
-## Home screen  
+### Home screen  
 ![ScreenShot](static/img/home.PNG)  
-## Chatbot  
+### Chatbot  
 ![ScreenShot](static/img/chatbot.PNG)  
 
 # Recommendations
