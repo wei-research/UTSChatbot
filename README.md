@@ -17,6 +17,22 @@ Video Demonstration: [Chatbot Demonstration](https://youtu.be/7U9V1K7qq-4)
 # Description
 The UTS FEIT Chatbot is a chatbot system that responds to user queries regarding courses and underlying sub-structures at the University of Technology Sydney (UTS). My primary responsibility revolves around the improvement of the data management aspects of the current [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot) and migrate its Rasa system into the current version of [Rasa X](https://rasa.com/docs/rasa-x/).  
 
+# Functionality
+## Greeting/Introduction
+The chatbot responds with greetings, gratitude and farewell. Additionally, the chatbot can inform the user of what it is capable of doing.  
+
+## Description of item by code(ID) or name
+The chatbot describes an item upon provision of name and/or code(unique identification). An item may refer to a course, subject, major, sub-major, choice block or stream. This short description is followed by an URL to the UTS Handbook.  
+
+## Maintaining contextual conversations
+The chatbot stores current entities into slots to maintain the same context within a conversation.  
+
+## Questions about items
+The chatbot responds to user queries about items such as credit points, duration or whether a course is a combined/honours degree etc.  
+
+## Structure information
+The chatbot can retrieve sub-structures of a course or related sub-structured and vice-versa. For example, what subjects are under a course or what majors are under a course. This needs to be further developed as it currently only works from course -> sub-structure and vice-versa.  
+
 # Rasa Installation  
 ## Rasa Guide  
 For Rasa installation and setup, these resources may assist you.  
@@ -24,14 +40,34 @@ For Rasa installation and setup, these resources may assist you.
  - [Rasa Installation Documentation](https://rasa.com/docs/rasa-x/installation-and-setup/install/local-mode)
  - [Rasa Installation/Setup Video Guide](https://www.youtube.com/watch?v=GwaSJUlB8oA)  
 
-## Software Versions
+Disregard steps to run `rasa init` as this involves creating an entirely new project.
+
+## Basic Installation
+Assuming that Python and a virtual environment has been setup, these basic steps may immediately complete installation.
+   ```
+   pip install rasa-x --extra-index-url https://pypi.rasa.com/simple
+   pip install rasa[spacy]
+   python -m spacy download en_core_web_md
+   python -m spacy download en_core_web_sm
+   ```  
+If you followed the [video setup guide](https://www.youtube.com/watch?v=GwaSJUlB8oA), you may find that the `python -m spacy link en_core_web_md en` command does not work. As outlined above, run `python -m spacy download en_core_web_sm` instead. In saying that, the [video guide](https://www.youtube.com/watch?v=GwaSJUlB8oA) helped me in setting up Rasa X.  
+
+There may be conflicts in software packages depending on the environment that you run your system, seek out online assistance for this.  
+
+## Software/OS Versions
  - Python 3.8.10  
  - pip 20.0.2  
  - Rasa 2.8.2  
  - Rasa X 0.42.0  
  - spaCy 3.1.1  
+ - Ubuntu 20.04.2 LTS
 
 # System Instructions
+## Setup
+Train the chatbot.
+   ```
+   rasa train
+   ```
 ## Webchat  
 Please ensure that the Rasa system has been fully set up on your server and underlying packages have been installed.
 
@@ -52,6 +88,17 @@ Please ensure that the Rasa system has been fully set up on your server and unde
     ```
     ```
     rasa x
+    ```  
+
+## Other helpful commands
+Each of the following commands needs `rasa run actions` to be run on a separate terminal.
+ - To test conversation in the command line, run:
+    ```
+    rasa shell
+    ```  
+ - To train and validate conversation in the command line, run:
+    ```
+    rasa interactive
     ```
 ---------------------------------------------------------------------------------------------------------
 # Datasets  
@@ -112,6 +159,27 @@ The chatbot is supported by a dataset extracted from [UTS FEIT Chatbot](https://
       - text: Bye
       - text: See you!
    ```
+# Intents
+Stored in `nlu.yml`, intents represent the user messages that denote the objectives of a user. In essence, these are the types of questions that the user can ask the chatbot.  
+
+| Intent           | Description                                                                       |
+| ---------------- |:---------------------------------------------------------------------------------:|
+| affirm           | User confirms or acknowledges chatbot response                                    |
+| atar             | User queries about ATAR requirement of course                                     |
+| children         | User queries about sub-structures under a course or other related sub-structures  |
+| combined         | User queries whether the course is a combined degree                              |
+| deny             | User rejects chatbot response                                                     |
+| details          | User queries detailed information about course or sub-structure                   |
+| duration         | User queries completion duration of course                                        |
+| fees             | User queries about course fees                                                    |
+| goodbye          | User bids farewell to chatbot and concludes conversation                          |
+| greet            | User addresses chatbot                                                            |
+| honours          | User queries whether the course is an honours degree                              |
+| list             | User queries a list of courses or sub-structures                                  |
+| parent           | User queries about courses or related sub-structures containing a sub-structure   |
+| prof_prac        | User queries whether the course offers a diploma in professional practice         |
+| thanks           | User offers gratitude to chatbot                                                  |
+| what_you_can_do  | User asks about the features of the chatbot                                       |
 
 # Actions
 ## Custom Actions
