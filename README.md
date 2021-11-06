@@ -18,19 +18,19 @@ Video Demonstration: [Chatbot Demonstration](https://youtu.be/7U9V1K7qq-4)
 The UTS FEIT Chatbot is a chatbot system that responds to user queries regarding courses and underlying sub-structures at the University of Technology Sydney (UTS). My primary responsibility revolves around the improvement of the data management aspects of the current [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot) and migrate its Rasa system into the current version of [Rasa X](https://rasa.com/docs/rasa-x/).  
 
 # Functionality
-## Greeting/Introduction
+### Greeting/Introduction
 The chatbot responds with greetings, gratitude and farewell. Additionally, the chatbot can inform the user of what it is capable of doing.  
 
-## Description of item by code(ID) or name
+### Description of item by code(ID) or name
 The chatbot describes an item upon provision of name and/or code(unique identification). An item may refer to a course, subject, major, sub-major, choice block or stream. This short description is followed by an URL to the UTS Handbook.  
 
-## Maintaining contextual conversations
+### Maintaining contextual conversations
 The chatbot stores current entities into slots to maintain the same context within a conversation.  
 
-## Questions about items
+### Questions about items
 The chatbot responds to user queries about items such as credit points, duration or whether a course is a combined/honours degree etc.  
 
-## Structure information
+### Structure information
 The chatbot can retrieve sub-structures of a course or related sub-structured and vice-versa. For example, what subjects are under a course or what majors are under a course. This needs to be further developed as it currently only works from course -> sub-structure and vice-versa.  
 
 # Rasa Installation  
@@ -203,8 +203,46 @@ The chatbot will predict an action that is most relevant to the user message aft
 ## Python Script
 `actions.py` contains the backend processing involved to transform data and query the database in addition to running custom action calls that have been described above. Each action name corresponds to the same class in the Python file derived by the `name` method.  
 
+Some special functions include:  
+   ```
+   class DbQueringMethods [Database querying class]
+      create_connection()        ->    returns database connection
+      query_tables()             ->    returns query results from courses and sub_structures tables
+      select_by_slot()           ->    returns query results from table with entity filter
+      select_by_multiple_slot()  ->    returns query results from table with multiple entity filters
+      select_children()          ->    returns children query results
+      select_parent()            ->    returns parent query results
+
+   check_code()                  ->    returns item type acronym, e.g. cbk, maj, smj
+   get_type()                    ->    returns item type full name
+   check_type()                  ->    returns item type from an item to supply URL
+   get_url()                     ->    returns URL link of associated item
+   ```
+
 # Chatbot Snippets
 ## Home screen  
 ![ScreenShot](static/img/home.PNG)  
 ## Chatbot  
 ![ScreenShot](static/img/chatbot.PNG)  
+
+# Recommendations
+### Official UTS Database Connection
+The database does not possess every single type of information available to UTS courses and sub-structures. This is the reason the chatbot has a feature for providing a website link to their corresponding UTS Handbook pages to find more information.  
+
+It would be ideal for the chatbot system to be connected to the official UTS database so that it parses every type of information. This could be done through an API (Application Programming Interface) connection.  
+
+### UTS Handbook Integration
+The UTS FEIT Chatbot would find its most appropriate location to be integrated in the UTS Handbook website. As a result, users can interact with the chatbot and find convenience in talking to what appears to be human. As an alternative domain of information, users would be able to simply query their request rather than spending significant amounts of time browsing through various webpages to locate their objective.  
+
+### Further Training
+The chatbot development can be expanded by training the machine learning components more. At this stage, the UTS FEIT Chatbot may have not considered every single possible human request. As such, more extensive training will only develop the chatbot scope further.  
+
+### Data Management in Conversations
+Future research can be conducted in the sector of data management in chatbot conversations or dialogues. As explored in this paper, this topic possesses significance in completely portraying human behaviour to cover more applications and uses.  
+
+In the context of this project, this would assist in the chatbot being able to further comprehend the context of conversations. The result would be the chatbot being more convenient to students as they can imitate human behaviour. Instead of relying on the university call centre, this chatbot could replicate that procedure and output similar responses.  
+
+### Chatbot Expansion
+The scope of this project has been for engineering and information technology courses at UTS. This could be expanded to include every single course and sub-structure at the university. However, this would require modifications to the data structure and entity relationships of the implemented database system. Additionally, a change in database software would be necessary to something more scalable. As stated, it would be ideal if this system is plugged into the official UTS database which is assumed to be run on the cloud. The immense amount of data should this type of expansion be implemented would be enormous.  
+
+The chatbot can expand further by not only narrowing down its scope to information about courses and sub-structures, but also general information about the university. It can become an alternative source of information in contrast to Ask UTS, which is the primary centre for student inquiries.  
