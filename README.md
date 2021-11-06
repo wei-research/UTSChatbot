@@ -219,6 +219,21 @@ Some special functions include:
    get_url()                     ->    returns URL link of associated item
    ```
 
+# SQLite3 Database
+To access the database from the command line, run (from root directory):
+   ```
+   sqlite3 uts.db
+   ```  
+To view available tables while in the sqlite3 terminal:
+   ```
+   .tables
+   ```  
+To view tables in readable structure while in the sqlite3 terminal:
+   ```
+   .header on
+   .mode column
+   SELECT * FROM courses;
+   ```  
 # Chatbot Snippets
 ## Home screen  
 ![ScreenShot](static/img/home.PNG)  
