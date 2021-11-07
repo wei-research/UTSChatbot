@@ -219,6 +219,7 @@ Some special functions include:
    check_type()                  ->    returns item type from an item to supply URL
    get_url()                     ->    returns URL link of associated item
    ```
+The SQLite3 package for Python should be already included when you install its standard library.  
 
 # SQLite3 Database
 The database was developed based on the following entity relationship diagram. `ipynb/createdb.ipynb` contains the code that created the database. It includes comments on how to import contents from the csv file to the database. Avoid running that file unless you know what you are doing or have made changes to the database structure etc.  

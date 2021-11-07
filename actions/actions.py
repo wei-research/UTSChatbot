@@ -5,13 +5,14 @@
 # https://rasa.com/docs/rasa/custom-actions
 
 from typing import Any, Text, Dict, List
+# Ensure that Rasa is installed for any of these packages to work
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 
 import sqlite3
 from sqlite3 import Error
-from fuzzywuzzy import process
+#from fuzzywuzzy import process # this is package for more complicated keyword matching
 
 class ActionList(Action):
     """
@@ -174,6 +175,9 @@ class ActionCombined(Action):
         return
 
 class ActionCreditPoints(Action):
+    """
+    Retrieve whether credit points associated to sub-structure
+    """
     def name(self) -> Text:
         return "action_credit_points"
 
@@ -207,6 +211,9 @@ class ActionCreditPoints(Action):
         return
 
 class ActionDuration(Action):
+    """
+    Retrieve how long it takes to complete course
+    """
     def name(self) -> Text:
         return "action_duration"
 
@@ -242,6 +249,9 @@ class ActionDuration(Action):
         return
 
 class ActionDetails(Action):
+    """
+    Retrieve short description of item plus link to UTS handbook page
+    """
     def name(self) -> Text:
         return "action_details"
 
@@ -390,6 +400,9 @@ class ActionParent(Action):
         return
 
 class ResetSlot(Action):
+    """
+    Reset slots storage 
+    """
     def name(self):
         return "action_reset_slot"
 
