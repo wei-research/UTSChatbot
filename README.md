@@ -2,6 +2,7 @@
 41030 Engineering Capstone - Spring 2021
 
 Project name: AI Chatbot Development  
+Project code: SPR-21-06309  
 Student: Christian Cabato (12915892)  
 Major: Data Engineering  
 
@@ -61,7 +62,9 @@ There may be conflicts in software packages depending on the environment that yo
  - Rasa 2.8.2  
  - Rasa X 0.42.0  
  - spaCy 3.1.1  
- - Ubuntu 20.04.2 LTS
+ - Ubuntu 20.04.2 LTS  
+
+The operating system in which you run Rasa may have an impact on its success. For me, Ubuntu 20.04.2 LTS worked.  
 
 # System Instructions
 ### Setup
