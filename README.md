@@ -8,6 +8,7 @@ Major: Data Engineering
 Supervisor: [Wei Liu](https://www.uts.edu.au/staff/wei.liu)  
 Co-adivsor: [Xinghao Yang](https://xinghaoyang.github.io/)  
 Original chatbot repository: [UTS FEIT Chatbot](https://github.com/XinghaoYang/UTSChatbot)  
+Capstone repository 2021: [Chatbot Capstone](https://github.com/christiancabato2/chatbot_capstone)  
 
 Chatbot widget source: [Chatbot Widget](https://github.com/JiteshGaikwad/Chatbot-Widget)  
 Conversational AI: [Rasa](https://rasa.com/)  
@@ -220,6 +221,9 @@ Some special functions include:
    ```
 
 # SQLite3 Database
+The database was developed based on the following entity relationship diagram. `ipynb/createdb.ipynb` contains the code that created the database. It includes comments on how to import contents from the csv file to the database. Avoid running that file unless you know what you are doing or have made changes to the database structure etc.  
+![ScreenShot](static/img/erd.PNG)  
+
 To access the database from the command line, run (from root directory):
    ```
    sqlite3 uts.db
