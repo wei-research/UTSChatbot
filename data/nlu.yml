@@ -1,25 +1,5 @@
 version: "2.0"
 nlu:
-- intent: years_entities
-  examples: |
-    - Which semester does [32123](code) in [Bachelor of Information Technology](name) take classes?
-    - When is the [32345](code) in [Bachelor of Information Technology](name)?
-    - When does [32345](code) in [Bachelor of Information Technology](name) take classes?
-    - When will [43234](code) in [Bachelor of Information Technology](name) be taught?
-- intent: years
-  examples: |
-    - When is the [32345]?
-    - Which term of the [32343](code)?
-    - which semester does [32123](code) take classes?
-    - When does [32567](code) take classes?
-    - When will [32567](code) be taught?
-    - When does [32567](code) start？
-    - When do I take [32567](code) course?
-    - What semester will [32567](code) be held?
-    - What semester is [32567](code) in？
-    - Can you tell me the semester of [32567](code) ?
-    - When will [32567](code) be held?
-    - When will [32567](code) begin？
 - intent: children
   examples: |
     - What are the contents of [c91953](code)
@@ -446,25 +426,4 @@ nlu:
     - what can you do
     - What can you do?
     - What can you do
-- intent: lookup:types
-  examples: |
-    - courses
-    - majors
-    - sub-majors
-    - streams
-    - choice blocks
-    - subjects
-- intent: lookup:summary
-  examples: |
-    - it master
-    - IT master
-    - IT bachelor
-    - it bachelor
-    - it
-    - IT
-- intent: lookup:name
-  examples: |
-    - data/entities.txt
-- intent: compulsory_subjects
-  examples: |
-    - What are the compulsary subjects in the [32345]?
+

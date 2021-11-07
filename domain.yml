@@ -18,15 +18,8 @@ intents:
 - fees
 - what_can_you_do
 - parent
-- compulsary_subjects
-- years
-- years_entities
 - affirm
-- compulsory_subjects
-- lookup:name
 - deny
-- lookup:summary
-- lookup:types
 entities:
 - code
 - name
