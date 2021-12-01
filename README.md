@@ -1,5 +1,5 @@
-# UTS - 41030 Engineering Capstone - UTS FEIT Chatbot
-41030 Engineering Capstone - Spring 2021
+# UTS FEIT Chatbot
+Spring 2021
 
 Project name: AI Chatbot Development  
 Project code: SPR-21-06309  
